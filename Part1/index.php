@@ -1,48 +1,36 @@
 <?php
 session_start();
+$_SESSION["entryTime"] = strtotime("now");
 ?>
 
 <!DOCTYPE html>
 <html>
 
+<head>
 <script type="text/javascript">
 
-function setSession() {
-    var time = GetTime();
-    '<%Session["entyTime"] = "'+ time +'"; %>';
-    alert('<%Session["entyTime"]%>');
-}
-
-function GetTime() {
-    var time = new Date();
-    return time;
-}
+var phpvalue = <?php echo $_SESSION["entryTime"] ?>;
 
 function Update() {
-    document.getElementById("timeDisplay").innerhtml =
-    "Time Elapsed: " + Math.abs(GetTime() = $_SESSION("entrytime"));
-}
+    var num = Math.round(new Date().getTime()/1000);
+    var total = num - phpvalue;
 
+    document.getElementById("demo").innerHTML = "Time Elapsed "+ total + " seconds";
+}
 </script>
 
-
+</head>
 <body>
 
-<?php
-$_SESSION["entryTime"] = "DIS TIME";
-
-?>
-
-<p id="timeDisplay"> HELLO </p>
+<p id="demo">  </p>
 
 <p>
-<?php echo $_SESSION["entryTime"]; ?>
+<?php 
+echo "First Entered the page at: " . date("h:i:sa");
+?>
 </p>
 
-<button type="button" onclick="Update()">
-<!-- <button type="button"> -->
-
-Update Time 
+<button type="button" onclick="Update()">Update Time 
 </button>
 </body>
 
