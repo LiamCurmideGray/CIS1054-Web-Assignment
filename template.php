@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html>
-<body>
+<?php
+include 'header.php';
+?>
+
 
 <h1>My First Heading</h1>
 <p>My first paragraph.</p>
@@ -11,5 +12,7 @@
         ?>
 
 <p>
-</body>
-</html>
+
+<?php
+include 'footer.php';
+?>
