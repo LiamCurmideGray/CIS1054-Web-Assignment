@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2020 at 06:56 PM
+-- Generation Time: Mar 20, 2020 at 01:16 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -19,8 +19,92 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `webassignment`
+-- Database: `web assignment db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `CategoryId` int(50) NOT NULL,
+  `CategoryName` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`CategoryId`, `CategoryName`) VALUES
+(1, 'Starters'),
+(2, 'Main Course'),
+(3, 'Dessert');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `favorites`
+--
+
+CREATE TABLE `favorites` (
+  `FavoritesId` int(50) NOT NULL,
+  `UserId` int(50) NOT NULL,
+  `ItemId` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `favorites`
+--
+
+INSERT INTO `favorites` (`FavoritesId`, `UserId`, `ItemId`) VALUES
+(1, 1, 1),
+(2, 1, 3),
+(3, 2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `item`
+--
+
+CREATE TABLE `item` (
+  `ItemId` int(50) NOT NULL,
+  `ItemName` varchar(255) NOT NULL,
+  `CategoryId` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `item`
+--
+
+INSERT INTO `item` (`ItemId`, `ItemName`, `CategoryId`) VALUES
+(1, 'Burger', 2),
+(2, 'Cake', 3),
+(3, 'Garlic Bread', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `itemdetails`
+--
+
+CREATE TABLE `itemdetails` (
+  `itemDetailsId` int(50) NOT NULL,
+  `ItemId` int(50) NOT NULL,
+  `Price` decimal(50,2) NOT NULL,
+  `Description` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `itemdetails`
+--
+
+INSERT INTO `itemdetails` (`itemDetailsId`, `ItemId`, `Price`, `Description`) VALUES
+(1, 1, '20.00', 'Big meaty burger'),
+(2, 2, '14.50', 'Served with candles'),
+(3, 3, '8.00', 'The best item on the menu');
 
 -- --------------------------------------------------------
 
@@ -91,6 +175,34 @@ INSERT INTO `userroles` (`UserRolesId`, `UserId`, `RoleId`) VALUES
 --
 
 --
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`CategoryId`);
+
+--
+-- Indexes for table `favorites`
+--
+ALTER TABLE `favorites`
+  ADD PRIMARY KEY (`FavoritesId`),
+  ADD KEY `UserId` (`UserId`),
+  ADD KEY `ItemId` (`ItemId`);
+
+--
+-- Indexes for table `item`
+--
+ALTER TABLE `item`
+  ADD PRIMARY KEY (`ItemId`),
+  ADD KEY `CategoryId` (`CategoryId`);
+
+--
+-- Indexes for table `itemdetails`
+--
+ALTER TABLE `itemdetails`
+  ADD PRIMARY KEY (`itemDetailsId`),
+  ADD KEY `ItemId` (`ItemId`);
+
+--
 -- Indexes for table `roledetails`
 --
 ALTER TABLE `roledetails`
@@ -116,6 +228,30 @@ ALTER TABLE `userroles`
 --
 
 --
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `CategoryId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `favorites`
+--
+ALTER TABLE `favorites`
+  MODIFY `FavoritesId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `item`
+--
+ALTER TABLE `item`
+  MODIFY `ItemId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `itemdetails`
+--
+ALTER TABLE `itemdetails`
+  MODIFY `itemDetailsId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `roledetails`
 --
 ALTER TABLE `roledetails`
@@ -136,6 +272,25 @@ ALTER TABLE `userroles`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `favorites`
+--
+ALTER TABLE `favorites`
+  ADD CONSTRAINT `favorites_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `user` (`UserId`),
+  ADD CONSTRAINT `favorites_ibfk_2` FOREIGN KEY (`ItemId`) REFERENCES `item` (`ItemId`);
+
+--
+-- Constraints for table `item`
+--
+ALTER TABLE `item`
+  ADD CONSTRAINT `item_ibfk_1` FOREIGN KEY (`CategoryId`) REFERENCES `category` (`CategoryId`);
+
+--
+-- Constraints for table `itemdetails`
+--
+ALTER TABLE `itemdetails`
+  ADD CONSTRAINT `itemdetails_ibfk_1` FOREIGN KEY (`ItemId`) REFERENCES `item` (`ItemId`);
 
 --
 -- Constraints for table `userroles`
