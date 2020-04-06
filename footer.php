@@ -1,4 +1,4 @@
-
+<script src="jsScripts\index_script.js"></script>
 
 
 </body>
