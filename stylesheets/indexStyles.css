@@ -3,8 +3,7 @@
 }
 
 img{
-    
-    width: 100%;
+    max-width: 100%;
 }
 
 .navDot{
@@ -13,8 +12,7 @@ img{
 }
 
 .Slideshow{
-
-    max-width: 1000px;
+    max-width: 1000px; 
     position: relative;
     margin: auto;
 }
@@ -100,6 +98,6 @@ img{
 }
 
 .menu{
-
+    color: green;
     background-color: aqua;
 }
