@@ -5,8 +5,8 @@
     <!-- Meta data - To make page adaptable according to screen size per device -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <link rel="stylesheet" href="stylesheets\gen_style.css">
-    <link rel="stylesheet" href="stylesheets\index_style.css">
+    <link rel="stylesheet" href="stylesheets\genStyles.css">
+    <link rel="stylesheet" href="stylesheets\indexStyles.css">
 
 
   </head>

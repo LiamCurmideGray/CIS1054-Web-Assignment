@@ -36,6 +36,13 @@
         <span class="dot" onclick="currentSlide(3)"></span>
     </div>
 
+    <div class = "menu">
+        <div class = "menuItem">1</div>
+        <div class = "menuItem">2</div>
+        <div class = "menuItem">3</div>
+        <div class = "menuItem">4</div>
+    </div>
+
 <?php
     include 'footer.php'
 ?>
