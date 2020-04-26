@@ -3,7 +3,7 @@
 }
 
 img{
-
+    
     width: 100%;
 }
 
@@ -97,4 +97,9 @@ img{
 
     from{opacity: .4;}
     to{opacity: 1;}
+}
+
+.menu{
+
+    background-color: aqua;
 }
