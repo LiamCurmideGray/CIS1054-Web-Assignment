@@ -26,21 +26,24 @@
             <a class="prev" onclick="plusSlide(-1)">&#10094;</a>
             <a class="next" onclick="plusSlide(1)">&#10095;</a>
         </div>
+
+        <div class="navDot">    
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
     </div>
 
     <br>
 
-    <div class="navDot">    
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
+   
 
-    <div class = "menu">
-        <div class = "menuItem">1</div>
-        <div class = "menuItem">2</div>
-        <div class = "menuItem">3</div>
-        <div class = "menuItem">4</div>
+    <div class = "mainMenu">
+        <a class = "mainMenuItem" href="#about.php">About</a>
+        <a class = "mainMenuItem" href="#menu.php">Menu</a>
+        <a class = "mainMenuItem" href="#contact.php">Contact</a>
+        <a class = "mainMenuItem" href="#favourites.php">Favourites</a>
+        <a class = "mainMenuItem" href="#login.php">Login</a>
     </div>
 
 <?php
