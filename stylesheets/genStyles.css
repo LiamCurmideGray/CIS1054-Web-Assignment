@@ -1,12 +1,21 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+
+    background-color: black;
   }
 
   .topnav {
+    z-index: 1;
     overflow: hidden;
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
     background-color: black;
-    border-radius:15px;
+    
+    display: flex;
+    justify-content: space-evenly;
+
   }
 
   .topnav a {
@@ -26,10 +35,12 @@ body {
   .line{
    
     position: relative;
-    height: 450px;
-    bottom: 10px;
-    padding: 10px 15px;
-    border-bottom: 1px solid black;
-    
-  
+    border-bottom: 1px solid white;   
+  }
+
+  .footerText{
+
+    text-align: center;
+    color: white;
+
   }
