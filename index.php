@@ -46,6 +46,13 @@
         <a class = "mainMenuItem" href="#login.php">Login</a>
     </div>
 
+    <div class = "menu">
+        <div class = "menuItem">1</div>
+        <div class = "menuItem">2</div>
+        <div class = "menuItem">3</div>
+        <div class = "menuItem">4</div>
+    </div>
+
 <?php
     include 'footer.php'
 ?>

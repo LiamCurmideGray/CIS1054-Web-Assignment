@@ -15,12 +15,13 @@ body {
     
     display: flex;
     justify-content: space-evenly;
+
   }
 
   .topnav a {
     float: left;
     color: white;
-    text-align: centers;
+    text-align: center;
     padding: 10px 15px;
     text-decoration: none;
     font-size: 18px;
@@ -41,4 +42,5 @@ body {
 
     text-align: center;
     color: white;
+
   }
