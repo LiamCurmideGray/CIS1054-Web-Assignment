@@ -106,14 +106,12 @@ img{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-
+    text-align: center;
     height: 100vh;
 }
 
 .mainMenuItem{
-
-    /* margin-left: 40vw;
-    margin-right: 40vw; */
-
-    
+    width: 20vw;
+    padding: 20px;
+    border: 2px solid white;    
 }
