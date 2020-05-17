@@ -1,0 +1,50 @@
+.aboutRestaurant{
+    height: 100vh;
+    text-align: center;
+    padding: 10vh;
+
+}
+
+.aboutRestaurantText{
+    text-align: justify;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30vh;
+    width: 50vw;
+}
+
+.aboutRestaurantText h1{
+    text-align: center;
+    color: #e8544f;
+}
+
+.aboutStaff{
+    height: 100vh;
+}
+
+.aboutStaffTitle{
+    text-align: center;
+    color: #e8544f;
+}
+
+.card{
+    width: 30vw;
+    height: 80vh;
+    float: left;
+    text-align: center;
+    /* padding: 0 8vw; */
+    margin: 0 3vh  0 3vh;
+    box-shadow: 0 4px 8px 0 #8e8d8a;
+}
+
+.staffImg{
+    width: 30vw;
+}
+
+.staffName{
+    color: #e98074;
+}
+
+.job{
+    color: #e98074;
+}
