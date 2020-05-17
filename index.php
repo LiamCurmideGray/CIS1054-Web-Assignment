@@ -8,7 +8,7 @@
         <!--<img src="Images\index_pics\Slideshow_pic1.jpg" alt="First picture of carousel depicting food.">-->
         <div class="Slides fade">
             <img src="Images\index_pics\Slideshow_pic2.jpg" alt="Second picture of carousel depicting food.">
-            <div class="caption"><h1>Welcome to the Chum Bucket!</h1></div>
+            <div class="caption"><h1>Welcome to the Chumm Buket!</h1></div>
         </div>
 
         <div class="Slides fade">
@@ -39,18 +39,11 @@
    
 
     <div class = "mainMenu">
-        <a class = "mainMenuItem" href="#about.php">About</a>
+        <a class = "mainMenuItem" href="about.php">About</a>
         <a class = "mainMenuItem" href="#menu.php">Menu</a>
         <a class = "mainMenuItem" href="#contact.php">Contact</a>
         <a class = "mainMenuItem" href="#favourites.php">Favourites</a>
         <a class = "mainMenuItem" href="#login.php">Login</a>
-    </div>
-
-    <div class = "menu">
-        <div class = "menuItem">1</div>
-        <div class = "menuItem">2</div>
-        <div class = "menuItem">3</div>
-        <div class = "menuItem">4</div>
     </div>
 
 <?php

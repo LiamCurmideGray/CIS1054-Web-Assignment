@@ -2,17 +2,14 @@ var slideIndex = 1;
 showSlide(slideIndex);
 
 function plusSlide(n){
-
     showSlide(slideIndex +=n );
 }
 
 function currentSlide(n){
-
     showSlide(slideIndex = n);
 }
 
 function showSlide(n){
-
     var i;
     var slides = document.getElementsByClassName("Slides");   
     var dots = document.getElementsByClassName("dot");   
