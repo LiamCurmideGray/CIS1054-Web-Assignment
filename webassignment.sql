@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2020 at 01:16 PM
+-- Generation Time: May 17, 2020 at 05:22 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `web assignment db`
+-- Database: `webassignment`
 --
 
 -- --------------------------------------------------------
@@ -134,7 +134,7 @@ INSERT INTO `roledetails` (`RoleId`, `RoleName`) VALUES
 CREATE TABLE `user` (
   `UserId` int(50) NOT NULL,
   `Email` varchar(255) NOT NULL,
-  `Password` varchar(255) NOT NULL,
+  `UsrPassword` varchar(255) NOT NULL,
   `Firstname` varchar(255) NOT NULL,
   `Surname` varchar(255) NOT NULL,
   `Telephone` int(50) NOT NULL
@@ -144,10 +144,13 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`UserId`, `Email`, `Password`, `Firstname`, `Surname`, `Telephone`) VALUES
+INSERT INTO `user` (`UserId`, `Email`, `UsrPassword`, `Firstname`, `Surname`, `Telephone`) VALUES
 (1, 'admin@gmail.com', 'admin', 'admin', 'admin', 21349200),
 (2, 'user@gmail.com', 'user', 'user', 'user', 21349200),
-(3, 'test@gmail.com', 'test', 'test', 'test', 21334433);
+(3, 'test@gmail.com', 'test', 'test', 'test', 21334433),
+(20, 'aa@gmail.com', 'a', 'aa', 'aa', 79999999),
+(33, 'gg@gmail.com', 'gg', 'gg', 'gg', 7900000),
+(43, 'hh@gmail.com', 'hh', 'hh', 'hh', 21444444);
 
 -- --------------------------------------------------------
 
@@ -175,34 +178,6 @@ INSERT INTO `userroles` (`UserRolesId`, `UserId`, `RoleId`) VALUES
 --
 
 --
--- Indexes for table `category`
---
-ALTER TABLE `category`
-  ADD PRIMARY KEY (`CategoryId`);
-
---
--- Indexes for table `favorites`
---
-ALTER TABLE `favorites`
-  ADD PRIMARY KEY (`FavoritesId`),
-  ADD KEY `UserId` (`UserId`),
-  ADD KEY `ItemId` (`ItemId`);
-
---
--- Indexes for table `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`ItemId`),
-  ADD KEY `CategoryId` (`CategoryId`);
-
---
--- Indexes for table `itemdetails`
---
-ALTER TABLE `itemdetails`
-  ADD PRIMARY KEY (`itemDetailsId`),
-  ADD KEY `ItemId` (`ItemId`);
-
---
 -- Indexes for table `roledetails`
 --
 ALTER TABLE `roledetails`
@@ -228,30 +203,6 @@ ALTER TABLE `userroles`
 --
 
 --
--- AUTO_INCREMENT for table `category`
---
-ALTER TABLE `category`
-  MODIFY `CategoryId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `favorites`
---
-ALTER TABLE `favorites`
-  MODIFY `FavoritesId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `item`
---
-ALTER TABLE `item`
-  MODIFY `ItemId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `itemdetails`
---
-ALTER TABLE `itemdetails`
-  MODIFY `itemDetailsId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `roledetails`
 --
 ALTER TABLE `roledetails`
@@ -261,7 +212,7 @@ ALTER TABLE `roledetails`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `UserId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `UserId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `userroles`
@@ -272,25 +223,6 @@ ALTER TABLE `userroles`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `favorites`
---
-ALTER TABLE `favorites`
-  ADD CONSTRAINT `favorites_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `user` (`UserId`),
-  ADD CONSTRAINT `favorites_ibfk_2` FOREIGN KEY (`ItemId`) REFERENCES `item` (`ItemId`);
-
---
--- Constraints for table `item`
---
-ALTER TABLE `item`
-  ADD CONSTRAINT `item_ibfk_1` FOREIGN KEY (`CategoryId`) REFERENCES `category` (`CategoryId`);
-
---
--- Constraints for table `itemdetails`
---
-ALTER TABLE `itemdetails`
-  ADD CONSTRAINT `itemdetails_ibfk_1` FOREIGN KEY (`ItemId`) REFERENCES `item` (`ItemId`);
 
 --
 -- Constraints for table `userroles`
