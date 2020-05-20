@@ -5,12 +5,13 @@ session_start();
 
 if ($_SESSION['result']) {
     echo $_SESSION['result'];
+
     $_SESSION['result'] = NULL;
  }
 ?>
 
-
 <link rel="stylesheet" href="stylesheets\registerStyle.css">
+
 
 <form action="phpFunctions/addNewUserToDb.php" method="POST">
       <div class="container">
