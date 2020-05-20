@@ -1,0 +1,10 @@
+.login{
+    height: 100vh;
+    margin-top: 10vh;
+    /* margin: 30vw; */
+}
+
+#loginError{
+    color: red;
+    opacity: 0;
+}
