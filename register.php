@@ -3,12 +3,12 @@ include 'header.php';
 
 session_start();
 
-if($_SESSION['result']) {
-  echo $_SESSION['result'];
+if ($_SESSION['result']) {
+    echo $_SESSION['result'];
 }
 ?>
 
-<style> 
+<style>
 * {box-sizing: border-box}
 
 /* Add padding to containers */
@@ -73,7 +73,7 @@ a {
 
 <?php
 
-  require_once ('utils.php');
+require_once 'utils.php';
 
 ?>
 
@@ -105,7 +105,7 @@ a {
 <hr>
 
 <button type="submit" class="registerbtn">Register </button>
-    </div>  
+    </div>
 
 </form>
 <!-- call func to add user to db addUser(email, pass, ...) -->
