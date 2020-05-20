@@ -71,7 +71,13 @@ a {
 
 </style>
 
-<form action="connection.php" method="POST">
+<?php
+
+  require_once ('utils.php');
+
+?>
+
+<form action="phpFunctions/connection.php" method="POST">
       <div class="container">
       <h1 > Register </h1>
 <p> Fill in form to create account. </p>
@@ -102,7 +108,7 @@ a {
     </div>  
 
 </form>
-
+<!-- call func to add user to db addUser(email, pass, ...) -->
 <?php
 include 'footer.php';
 ?>
