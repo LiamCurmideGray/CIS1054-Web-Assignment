@@ -29,7 +29,7 @@ if ($_SESSION['result']) {
 <input type="text" placeholder="Last Name" name="lastname" required>
 
 <label> Telephone </label>
-<input type="number" placeholder="Phone Number" name="telephone" min="20000000" max="28000000" required>
+<input type="number" placeholder="Phone Number" name="telephone" min="20000000" max="99999999" required>
 
 <label> Password </label>
 <input type="password" placeholder="Password" name="password" required>
