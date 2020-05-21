@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="stylesheets\genStyles.css">
     <link rel="stylesheet" href="stylesheets\indexStyles.css">
     <link rel="stylesheet" href="stylesheets\aboutStyles.css">
+    <link rel="stylesheet" href="stylesheets\contactStyles.css">
     <link rel="stylesheet" href="stylesheets\loginStyles.css">
+
 
 
   </head>
@@ -19,7 +21,7 @@
       <a href="index.php">Home </a>
       <a href="about.php">About </a>
       <a href="#menu">Menu </a>
-      <a href="#contact">Contact </a>
+      <a href="contact.php">Contact </a>
       <a href="#favourites">Favourites </a>
       <a href="login.php">Login </a>
 
