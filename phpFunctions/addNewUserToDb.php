@@ -15,7 +15,7 @@ if (!empty($email) || !empty($firstname) || !empty($lastname) || !empty($telepho
 
     if (isset($conn)) {
 
-        require_once '../utils.php';
+        require_once 'utils.php';
         $passwordHash = password_hash($password, PASSWORD_DEFAULT, createHash($password));
         $rptPasswordHash = password_hash($rptPassword, PASSWORD_DEFAULT, createHash($rptPassword));
 
