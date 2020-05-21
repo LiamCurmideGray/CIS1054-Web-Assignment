@@ -4,6 +4,7 @@
 </body>
 
 <footer> 
+<br>
 <div class="line"></div>
 
 <p class = "footerText">  Trademark Restaurant </p>
