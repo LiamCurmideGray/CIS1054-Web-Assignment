@@ -3,43 +3,39 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: #8E8D8A;
     background-color: #EAE7DC;
-  }
+}
 
-  .topnav {
+.topnav {
     z-index: 1;
     overflow: hidden;
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: #D8C3A5;
     display: flex;
     justify-content: space-evenly;
+}
 
-  }
-
-  .topnav a {
+.topnav a {
     float: left;
     color: #d17368;
     text-align: center;
     padding: 10px 15px;
     text-decoration: none;
     font-size: 18px;
-  }
+}
 
-  .topnav a:hover {
-    background-color:#c2af94;
+.topnav a:hover {
+    background-color: #c2af94;
     color: #E98074;
-  }
+}
 
-  .line{
-   
+.line {
     position: relative;
-    border-bottom: 1px solid white;   
-  }
+    border-bottom: 1px solid white;
+}
 
-  .footerText{
-
+.footerText {
     text-align: center;
     color: white;
-
-  }
+}
