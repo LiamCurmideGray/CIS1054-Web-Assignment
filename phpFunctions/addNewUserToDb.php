@@ -8,7 +8,7 @@ $telephone = $_POST['telephone'];
 $password = $_POST['password'];
 $rptPassword = $_POST['password-repeat'];
 
-if (!empty($email) || !empty($firstname) || !empty($lastname) || !empty($telephone) || !empty($password) || !empty($rptPassword)) {
+if (!empty($email) && !empty($firstname) && !empty($lastname) && !empty($telephone) && !empty($password) && !empty($rptPassword)) {
     require_once 'connectToDB.php';
 
     $conn = connectionDb();
@@ -80,11 +80,11 @@ if (!empty($email) || !empty($firstname) || !empty($lastname) || !empty($telepho
             header('Location: ../register.php');
             exit;
         }
-
-    } else {
-        $conn->close();
-        $_SESSION['result'] = '<script> alert("All fields are required") </script>';
-        header('Location: ../register.php');
-        exit;
     }
+    
+} else {
+    $conn->close();
+    $_SESSION['result'] = '<script> alert("All fields are required") </script>';
+    header('Location: ../register.php');
+    exit;
 }

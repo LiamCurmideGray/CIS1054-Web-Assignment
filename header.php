@@ -18,9 +18,10 @@
   <div class="topnav">
       <a href="index.php">Home </a>
       <a href="about.php">About </a>
-      <a href="#menu">Menu </a>
+      <a href="menu.php">Menu </a>
       <a href="#contact">Contact </a>
       <a href="#favourites">Favourites </a>
       <a href="login.php">Login </a>
 
     </div>
+</br></br>
