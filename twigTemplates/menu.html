@@ -1,0 +1,23 @@
+<h1 style="text-align: center;">Menu Page</h1>
+<br />
+
+<table>
+  {%for category in categories%}
+  <h2 style="text-align: center;">{{category.CategoryName}}</h2>
+  <table border="1" style="width: 100%;">
+    <tr>
+      <th>Item Name</th>
+    </tr>
+    {%for item in items%} {%if category.CategoryId == item.CategoryId%}
+    <tr style="text-align: center;">
+      <td>{{item.ItemName}}</td>
+      <td><a href="menuDetails.php">View Details</a></td>
+    </tr>
+
+    {%endif%} {%endfor%}
+  </table>
+  <br />
+  {%endfor%}
+
+  <!-- <p>ID: {{item.ItemId}} Item Name: {{item.ItemName}} Category Id: {{item.CategoryId}}</p> -->
+</table>
