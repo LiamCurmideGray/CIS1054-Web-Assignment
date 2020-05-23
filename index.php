@@ -39,9 +39,9 @@
    
 
     <div class = "mainMenu">
-        <a class = "mainMenuItem" href="about.php">About</a>
+      <a class = "mainMenuItem" href="about.php">About</a>
         <a class = "mainMenuItem" href="menu.php">Menu</a>
-        <a class = "mainMenuItem" href="#contact.php">Contact</a>
+        <a class = "mainMenuItem" href="contact.php">Contact</a>
         <a class = "mainMenuItem" href="#favourites.php">Favourites</a>
         <a class = "mainMenuItem" href="login.php">Login</a>
     </div>
