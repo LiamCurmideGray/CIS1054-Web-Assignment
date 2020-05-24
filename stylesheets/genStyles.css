@@ -14,6 +14,7 @@ body {
     background-color: #D8C3A5;
     display: flex;
     justify-content: space-evenly;
+    padding-bottom: 7px;
 }
 
 .topnav a {
@@ -31,8 +32,8 @@ body {
 }
 
 .line {
+    padding-top: 7px;
     position: relative;
-
     border-bottom: 1px solid black;   
   }
 
