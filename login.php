@@ -1,5 +1,12 @@
 <?php
-include "header.php";
+    include "header.php";
+
+    session_start();
+
+    // if($_SESSION['result']) {
+    //     echo $_SESSION['result'];
+    //     $_SESSION['result'] = NULL;
+    //   } 
 ?>
 
 <div class = "login">
@@ -16,28 +23,23 @@ include "header.php";
         <input type="submit" name="submit" value="LOGIN" class="btn-login"/>
     </form>
 
+    <p id = "loginError" >Email/Password incorrect!</p>
+
     <?php
-if (isset($_SESSION['isError'])) {
-    if ($_SESSION['isError']) {
-        $opacity = 1;
-    } else {
-        $opacity = 0;
-    }
-}else{
-    $opacity = 0;
-}
-?>
+    
+    if($_SESSION['result']) {
+        echo $_SESSION['result'];
+        $_SESSION['result'] = NULL;
+      }
 
-    <p id = "loginError" style = "opacity:<?php echo $opacity ?>;">Email/Password incorrect!</p>
-
-
+    ?>
 
     <p>Don't have an account?</p>
     <a href="register.php">Sign up!</a>
 
-
+  
 
 </div>
 <?php
-include "footer.php";
+    include "footer.php";
 ?>
