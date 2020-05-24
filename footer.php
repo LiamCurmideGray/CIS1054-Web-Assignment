@@ -1,5 +1,5 @@
 <script src="jsScripts\index_script.js"></script>
-<script src="jsScripts\userAccounts.js"></script>
+
 
 </body>
 

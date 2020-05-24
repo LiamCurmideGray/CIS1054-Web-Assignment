@@ -1,25 +1,15 @@
-<?php
-session_start();
-
-if (empty($_SESSION['userID'])) {
-    $_SESSION['isLogged'] = false;
-} 
-?>
-
 <!DOCTYPE html>
 
 <html>
   <head>
     <!-- Meta data - To make page adaptable according to screen size per device -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    
     <link rel="stylesheet" href="stylesheets\genStyles.css">
     <link rel="stylesheet" href="stylesheets\indexStyles.css">
     <link rel="stylesheet" href="stylesheets\aboutStyles.css">
     <link rel="stylesheet" href="stylesheets\contactStyles.css">
     <link rel="stylesheet" href="stylesheets\loginStyles.css">
-    <link rel="stylesheet" href="stylesheets\registerStyles.css">
-    <link rel="stylesheet" href="stylesheets\userAccountStyles.css">
 
 
   </head>
@@ -44,3 +34,4 @@ if (empty($_SESSION['userID'])) {
       }
       ?>
     </div>
+</br></br>

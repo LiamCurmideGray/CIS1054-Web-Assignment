@@ -41,17 +41,7 @@
         <a class = "mainMenuItem" href="menu.php">Menu</a>
         <a class = "mainMenuItem" href="contact.php">Contact</a>
         <a class = "mainMenuItem" href="#favourites.php">Favourites</a>
-        <?php
-         if($_SESSION['isLogged']){
-        ?>
-        <a class = "mainMenuItem" href="userAccount.php">User Account</a>
-        <?php
-      }else{
-      ?>
-      <a class = "mainMenuItem" href="login.php">Login</a>
-      <?php
-      }
-      ?>
+        <a class = "mainMenuItem" href="login.php">Login</a>
     </div>
 
 <?php
