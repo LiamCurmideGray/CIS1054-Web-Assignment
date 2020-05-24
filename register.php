@@ -2,7 +2,6 @@
 include 'header.php';
 
 session_start();
-
 if ($_SESSION['result']) {
     echo $_SESSION['result'];
     $_SESSION['result'] = NULL;
@@ -14,7 +13,7 @@ if ($_SESSION['result']) {
 
 <form action="phpFunctions/addNewUserToDb.php" method="POST">
       <div class="container">
-      <h1 > Register </h1>
+      <h1> Register </h1>
 <p> Fill in form to create account. </p>
 
 <hr>
