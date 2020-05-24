@@ -1,0 +1,60 @@
+.usrAcc{
+    height: 100vh;
+    /* align-content: center; */
+    padding-left: 10vw;
+    padding-right: 10vw;
+
+}
+
+.usrAccContainer{
+    /* margin-right: 10vw;
+    margin-left: 10vw; */
+    display: grid;
+    height: 85%;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 33% 33% 33%;
+    align-content: center;
+    justify-content: space-evenly;
+    grid-column-gap: 5vw;
+    /* grid-row-gap: 5vw; */
+}
+
+.usrAccBtn{
+    height: 15vh;
+    /* width: 90%; */
+    font-size: 4vw;
+    color: #71706e;
+    background-color: #E98074;
+    border: 1px;
+    border-color: black;
+}
+
+.usrAccBtn:hover, .chgBtn:hover{
+    background-color: #d17368;
+}
+
+.userHead1{
+    padding-top: 5vh;
+}
+
+.popup{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    background-color: #d2cfc6;
+}
+
+.chngText{
+    max-width: 70%
+}
+
+.chgBtn{
+    color: #71706e;
+    background-color: #E98074;
+    border: 1px;
+    border-color: black;
+}

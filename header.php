@@ -12,18 +12,26 @@
     <link rel="stylesheet" href="stylesheets\loginStyles.css">
 
 
-
   </head>
 
   <body>
 
   <div class="topnav">
-      <a href="index.php">Home </a>
-      <a href="about.php">About </a>
-    <a href="menu.php">Menu </a>
-      <a href="contact.php">Contact </a>
-      <a href="#favourites">Favourites </a>
-      <a href="login.php">Login </a>
-
+      <a href="index.php">Home</a>
+      <a href="about.php">About</a>
+      <a href="menu.php">Menu</a>
+      <a href="contact.php">Contact</a>
+      <a href="#favourites">Favourites</a>
+      <?php
+      if($_SESSION['isLogged']){
+      ?>
+       <a href="userAccount.php">User Account</a>
+      <?php
+      }else{
+      ?>
+      <a href="login.php">Login</a>
+      <?php
+      }
+      ?>
     </div>
 </br></br>

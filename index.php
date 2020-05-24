@@ -36,8 +36,6 @@
 
     <br>
 
-   
-
     <div class = "mainMenu">
       <a class = "mainMenuItem" href="about.php">About</a>
         <a class = "mainMenuItem" href="menu.php">Menu</a>
