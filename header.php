@@ -3,7 +3,6 @@ session_start();
 
 if (empty($_SESSION['userID'])) {
     $_SESSION['isLogged'] = false;
-    // $_SESSION['isError'] = false;
 } 
 ?>
 

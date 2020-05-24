@@ -1,6 +1,7 @@
 <?php
 include 'header.php';
 
+session_start();
 if ($_SESSION['result']) {
     echo $_SESSION['result'];
     $_SESSION['result'] = NULL;
