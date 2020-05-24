@@ -21,8 +21,6 @@
 
         $dbPassStr = $valueOfUsr->UsrPassword;
 
-        // echo gettype($valueOfUsr);
-
         if(password_verify($pswd, $dbPassStr)){ 
             $_SESSION['isLogged'] = true;
             $_SESSION['userID'] = $valueOfUsr->UserId; 
@@ -31,7 +29,6 @@
             exit;
         }else{
             $_SESSION['isLogged'] = false;
-            // $_SESSION['result'] = '<script>document.getElementById("loginError").style.opacity = "1";</script>';
             $_SESSION['isError'] = true;
             header('Location: ../login.php');    
             exit;
@@ -39,7 +36,6 @@
 
     }else{
         $_SESSION['isLogged'] = false;
-        // $_SESSION['result'] = '<script>document.getElementById("loginError").style.opacity = "1";</script>';
         $_SESSION['isError'] = true;
         header('Location: ../login.php');    
         exit;
