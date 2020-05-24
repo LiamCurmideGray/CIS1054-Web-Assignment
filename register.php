@@ -1,10 +1,13 @@
 <?php
 include 'header.php';
 
-if ($_SESSION['result']) {
-    echo $_SESSION['result'];
-    $_SESSION['result'] = NULL;
- }
+if(!isset($_SESSION)) 
+    { 
+        if ($_SESSION['result']) {
+            echo $_SESSION['result'];
+            $_SESSION['result'] = NULL;
+        }
+    } 
 ?>
 
 

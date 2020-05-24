@@ -1,12 +1,16 @@
 <?php
 include 'header.php';
 
-session_start();
+// session_start();
+if(!isset($_SESSION)) 
+    { 
+        if ($_SESSION['result']) {
+            echo $_SESSION['result'];
+            $_SESSION['result'] = NULL;
+        }
+    } 
 
-if ($_SESSION['result']) {
-    echo $_SESSION['result'];
-    $_SESSION['result'] = NULL;
-}
+
 ?>
 
 <script language="Javascript">
