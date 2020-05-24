@@ -1,13 +1,10 @@
 .login{
     height: 100vh;
     margin-top: 10vh;
-    text-align: center;
-    width: 40vw;
-    margin-top: 6vh;
-    margin-left:30vw;
+    /* margin: 30vw; */
 }
 
 #loginError{
     color: red;
-    /* opacity: 0; */
-}   
+    opacity: 0;
+}

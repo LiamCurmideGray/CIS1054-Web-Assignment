@@ -36,45 +36,14 @@
 
     <br>
 
-   <?php
-        // $_SESSION['isLogged'] = false;
-        // echo $_SESSION['isLogged'];
-        
-
-        // if(!isset($_SESSION['isLogged']) || !$_SESSION['isLogged']){
-        //     echo "Not logged in!";
-        // }
-        // else{
-        //     echo "You are logged on";
-        // }
-        // echo $_SESSION['userID'];
-
-        // if($_SESSION['isLogged']){
-
-        //     echo '<script>
-        //             var loginBtn = document.getElementById("loginToUser");
-        //             loginBtn.innerHTML = "User Account";
-        //             loginBtn.href="userAccount";
-        //           </script>';
-        // }
-   ?>
+   
 
     <div class = "mainMenu">
       <a class = "mainMenuItem" href="about.php">About</a>
         <a class = "mainMenuItem" href="menu.php">Menu</a>
         <a class = "mainMenuItem" href="contact.php">Contact</a>
         <a class = "mainMenuItem" href="#favourites.php">Favourites</a>
-        <?php
-         if($_SESSION['isLogged']){
-        ?>
-        <a class = "mainMenuItem" href="userAccount.php">User Account</a>
-        <?php
-      }else{
-      ?>
-      <a class = "mainMenuItem" href="login.php">Login</a>
-      <?php
-      }
-      ?>
+        <a class = "mainMenuItem" href="login.php">Login</a>
     </div>
 
 <?php
