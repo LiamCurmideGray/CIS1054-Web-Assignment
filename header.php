@@ -17,6 +17,7 @@ if (empty($_SESSION['userID'])) {
     <link rel="stylesheet" href="stylesheets\genStyles.css">
     <link rel="stylesheet" href="stylesheets\indexStyles.css">
     <link rel="stylesheet" href="stylesheets\aboutStyles.css">
+    <link rel="stylesheet" href="stylesheets\contactStyles.css">
     <link rel="stylesheet" href="stylesheets\loginStyles.css">
     <link rel="stylesheet" href="stylesheets\registerStyles.css">
     <link rel="stylesheet" href="stylesheets\userAccountStyles.css">
@@ -29,8 +30,8 @@ if (empty($_SESSION['userID'])) {
   <div class="topnav">
       <a href="index.php">Home</a>
       <a href="about.php">About</a>
-      <a href="#menu">Menu</a>
-      <a href="#contact">Contact</a>
+      <a href="menu.php">Menu</a>
+      <a href="contact.php">Contact</a>
       <a href="#favourites">Favourites</a>
       <?php
       if($_SESSION['isLogged']){
@@ -44,3 +45,4 @@ if (empty($_SESSION['userID'])) {
       }
       ?>
     </div>
+</br></br>
