@@ -11,32 +11,37 @@
 
         $conn = connectionDb();
 
-        $sql = "SELECT * FROM user WHERE Email=?";
+        $sql = "SELECT UsrPassword FROM user WHERE Email=?";
+
+        // $dbPass = mysqli_query($conn, $sql);
+        // $dbPassArr = mysqli_fetch_array($dbPass);
+        // $dbPassStr = implode($dbPassArr);
 
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('s', $email);
         $stmt->execute();
         $result = $stmt->get_result();
-        $valueOfUsr = $result->fetch_object();
+        $valueOfUsrPass = $result->fetch_object();
 
-        $dbPassStr = $valueOfUsr->UsrPassword;
+        $dbPassStr = $valueOfUsrPass->UsrPassword;
 
-        if(password_verify($pswd, $dbPassStr)){ 
-            $_SESSION['isLogged'] = true;
-            $_SESSION['userID'] = $valueOfUsr->UserId; 
-            $_SESSION['isError'] = false;
+        // echo gettype($pswd);
+        // echo gettype($dbPassStr);       
+        
+        // echo password_verify($pswd, $dbPassStr) ? 'true' : 'false';
+        
+        // if(mysqli_num_rows($dbPass)==1){
+        if(password_verify($pswd, $dbPassStr)){            
             header('Location: ../index.php');
             exit;
         }else{
-            $_SESSION['isLogged'] = false;
-            $_SESSION['isError'] = true;
+            $_SESSION['result'] = '<script>document.getElementById("loginError").style.opacity = "1";</script>';
             header('Location: ../login.php');    
             exit;
         }
 
     }else{
-        $_SESSION['isLogged'] = false;
-        $_SESSION['isError'] = true;
+        $_SESSION['result'] = '<script>document.getElementById("loginError").style.opacity = "1";</script>';
         header('Location: ../login.php');    
         exit;
     }
