@@ -38,7 +38,7 @@
     padding-top: 5vh;
 }
 
-#emailPopup{
+.popup{
     display: none;
     position: fixed;
     bottom: 0;

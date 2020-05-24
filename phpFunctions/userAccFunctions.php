@@ -7,8 +7,9 @@ $conn = connectionDb();
 if(array_key_exists('logout', $_POST)){
     logout();
 }else if(array_key_exists('chgEmail', $_POST)){
-
     changeEmail();
+}else if(array_key_exists('chgName', $_POST)){
+    changeName();
 }
 
 function logout(){
@@ -29,6 +30,26 @@ function changeEmail(){
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
+    $stmt->execute();
+
+    header('Location: ../index.php');
+    exit;
+}
+
+function changeName(){
+    $conn = connectionDb();
+
+    $fName = $_POST['fName'];
+    $sName = $_POST['sName'];
+
+    $sql = "update user set Firstname=? where UserId = ".$_SESSION['userID']."";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('s', $fName);
+    $stmt->execute();
+
+    $sql = "update user set Surname=? where UserId = ".$_SESSION['userID']."";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('s', $sName);
     $stmt->execute();
 
     header('Location: ../index.php');
