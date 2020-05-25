@@ -19,6 +19,8 @@ if (array_key_exists('logout', $_POST)) {
     changeTelNum();
 } else if (array_key_exists('chgPswd', $_POST)) {
     changePswd();
+} else if (array_key_exists('delAcc', $_POST)) {
+    deleteUser();
 }
 
 function logout()
@@ -114,13 +116,37 @@ function changePswd()
 
         $_SESSION['isError'] = false;
 
-        header('Location: ../index.php'); 
+        header('Location: ../index.php');
         exit;
     } else {
         $_SESSION['isError'] = true;
 
-        header('Location: ../userAccount.php'); 
+        header('Location: ../userAccount.php');
         exit;
     }
-   
+
+}
+
+function deleteUser()
+{
+    $conn = connectionDb();
+
+    $sqlRole = "delete from userroles where UserId= " . $_SESSION['userID'] . "";
+    $sqlUser = "delete from user where UserId= " . $_SESSION['userID'] . "";
+    $sqlFav = "delete from favorites where UserId= " . $_SESSION['userID'] . "";
+
+    if ($conn->query($sqlRole) === true) {
+        if ($conn->query($sqlUser) === true) {
+            if ($conn->query($sqlFav)) {
+                // echo "yes";
+                logout();
+            }
+        } else {
+            echo "no " . $conn->error;
+        }
+    } else {
+        echo "no2 " . $conn->error;
+    }
+
+    
 }
