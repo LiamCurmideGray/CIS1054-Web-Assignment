@@ -23,12 +23,12 @@ if (isset($_SESSION['isError'])) {
     } else {
         $opacity = 0;
     }
-}else{
+} else {
     $opacity = 0;
 }
 ?>
 
-    <p id = "loginError" style = "opacity:<?php echo $opacity ?>;">Email/Password incorrect!</p>
+    <p id = "error" style = "opacity:<?php echo $opacity ?>;">Email/Password incorrect!</p>
 
 
 
