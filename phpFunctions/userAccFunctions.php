@@ -5,6 +5,8 @@ if (!isset($_SESSION)) {
 }
 
 require_once 'connectToDB.php';
+require_once 'utils.php';
+
 $conn = connectionDb();
 
 if (array_key_exists('logout', $_POST)) {
@@ -15,6 +17,8 @@ if (array_key_exists('logout', $_POST)) {
     changeName();
 } else if (array_key_exists('chgTelNum', $_POST)) {
     changeTelNum();
+} else if (array_key_exists('chgPswd', $_POST)) {
+    changePswd();
 }
 
 function logout()
@@ -88,4 +92,35 @@ function changeTelNum()
         $_SESSION['isError'] = true;
         header('Location: ../userAccount.php');
     }
+}
+
+function changePswd()
+{
+    $conn = connectionDb();
+
+    $pswd = $_POST['pswd'];
+    $pswdRep = $_POST['pswdRep'];
+
+    // echo $pswd;
+    // echo $pswdRep;
+
+    if ($pswd == $pswdRep) {
+        $pswdHash = password_hash($pswd, PASSWORD_DEFAULT, createHash($pswd));
+        $sql = "update user set UsrPassword=? where UserId= " . $_SESSION['userID'] . "";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('s', $pswdHash);
+        $stmt->execute();
+
+        $_SESSION['isError'] = false;
+
+        header('Location: ../index.php'); 
+        exit;
+    } else {
+        $_SESSION['isError'] = true;
+
+        header('Location: ../userAccount.php'); 
+        exit;
+    }
+   
 }
