@@ -7,7 +7,7 @@
     margin-left:30vw;
 }
 
-#loginError{
+#error{
     color: red;
     /* opacity: 0; */
 }   

@@ -8,7 +8,7 @@ require 'phpFunctions/userAccFunctions.php';
         <form class = "usrAccContainer" action="phpFunctions/userAccFunctions.php" method="POST">
             <input id="chngEmailbtn" class="usrAccBtn" name="chngEmail" type="button" onclick="openForm(name)" value="Change Email"/>
             <input class="usrAccBtn" name="chngName" type="button" onclick="openForm(name)" value="Change Name"/>
-            <input class="usrAccBtn" name="chngTel" type="submit" onclick="" value="Change Tel. Number"/>
+            <input class="usrAccBtn" name="chngTelNum" type="button" onclick="openForm(name)" value="Change Tel. Number"/>
             <input class="usrAccBtn" name="chngPswd" type="submit" onclick="" value="Change Password"/>
             <input class="usrAccBtn" name="delAcc" type="submit" onclick="" value="Delete Account"/>
             <input class="usrAccBtn" name="logout" type="submit" value="Logout"/>
@@ -21,10 +21,12 @@ require 'phpFunctions/userAccFunctions.php';
         <h1>Change Email</h1>
         <label for="email"><b>Email</b></label>
         <input class="chngText" type="text" placeholder="Enter Email" name="email" required>
-
+        <br>
         <button type="submit" class="chgBtn" name="chgEmail" onclick="">Change</button>
         <button type="button" class="chgBtn" name="chngEmail" class="btn cancel" onclick="closeForm(name)">Close</button>
+
     </form>
+    <br>
 </div>
 
 <div id="namePopup" class="popup">
@@ -35,11 +37,37 @@ require 'phpFunctions/userAccFunctions.php';
         <br>
         <label for="sName"><b>Second Name</b></label>
         <input class="chngText" type="text" placeholder="Enter Second Name" name="sName" required>
-
+        <br>
         <button type="submit" class="chgBtn" name="chgName" onclick="">Change</button>
         <button type="button" class="chgBtn" name="chngName" class="btn cancel" onclick="closeForm(name)">Close</button>
+        <br>
     </form>
 </div>
+
+<div id="telNumPopup" class="popup">
+    <form action="phpFunctions/userAccFunctions.php" class="chgForm" method="POST">
+        <h1>Change Tel. Number</h1>
+        <label for="telNum"><b>Tel Num</b></label>
+        <input class="chngText" type="text" placeholder="Enter Tel. Number" name="telNum" required>
+        <br>
+        <button type="submit" class="chgBtn" name="chgTelNum" onclick="">Change</button>
+        <button type="button" class="chgBtn" name="chngTelNum" class="btn cancel" onclick="closeForm(name)">Close</button>
+        <br>
+    </form>
+</div>
+
+<?php
+if (isset($_SESSION['isError'])) {
+    if ($_SESSION['isError']) {
+        $opacity = 1;
+    } else {
+        $opacity = 0;
+    }
+} else {
+    $opacity = 0;
+}
+?>
+ <p id = "error" style = "opacity:<?php echo $opacity ?>;">Invalid Change!</p>
 
 <?php
 include 'footer.php';

@@ -46,10 +46,11 @@
     border: 3px solid #f1f1f1;
     z-index: 9;
     background-color: #d2cfc6;
+    align-items: center;
 }
 
 .chngText{
-    max-width: 70%
+    max-width: 70%;
 }
 
 .chgBtn{
