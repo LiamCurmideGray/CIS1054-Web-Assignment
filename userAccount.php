@@ -9,7 +9,7 @@ require 'phpFunctions/userAccFunctions.php';
             <input id="chngEmailbtn" class="usrAccBtn" name="chngEmail" type="button" onclick="openForm(name)" value="Change Email"/>
             <input class="usrAccBtn" name="chngName" type="button" onclick="openForm(name)" value="Change Name"/>
             <input class="usrAccBtn" name="chngTelNum" type="button" onclick="openForm(name)" value="Change Tel. Number"/>
-            <input class="usrAccBtn" name="chngPswd" type="submit" onclick="" value="Change Password"/>
+            <input class="usrAccBtn" name="chngPswd" type="button" onclick="openForm(name)" value="Change Password"/>
             <input class="usrAccBtn" name="delAcc" type="submit" onclick="" value="Delete Account"/>
             <input class="usrAccBtn" name="logout" type="submit" value="Logout"/>
         </form>
@@ -52,6 +52,20 @@ require 'phpFunctions/userAccFunctions.php';
         <br>
         <button type="submit" class="chgBtn" name="chgTelNum" onclick="">Change</button>
         <button type="button" class="chgBtn" name="chngTelNum" class="btn cancel" onclick="closeForm(name)">Close</button>
+        <br>
+    </form>
+</div>
+
+<div id="pswdPopup" class="popup">
+    <form action="phpFunctions/userAccFunctions.php" class="chgForm" method="POST">
+        <h1>Change Password</h1>
+        <label for="pswd"><b>Password</b></label>
+        <input class="chngText" type="text" placeholder="Enter Password" name="pswd" required>
+        <label for="pswdRep"><b>Repeat Password</b></label>
+        <input class="chngText" type="text" placeholder="Repeat New Password" name="pswdRep" required>
+        <br>
+        <button type="submit" class="chgBtn" name="chgPswd" onclick="">Change</button>
+        <button type="button" class="chgBtn" name="chngPswd" class="btn cancel" onclick="closeForm(name)">Close</button>
         <br>
     </form>
 </div>
