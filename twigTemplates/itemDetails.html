@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="stylesheets\menuStyles.css">
+
+<div class="menuBody">
+<h1 style="text-align: center;">Item Details Page</h1>
+<br /> 
+      {%for item in items%} 
+  <div class="menuItem">
+    <div class ="menuItem-Name">
+       <h3> {{item.ItemName}} </h3>
+    </div>
+
+    {%for itemDetail in itemDetails%}
+    <div class="menuItem-Price">
+      <h4>€{{itemDetail.Price}}</h4>
+    </div>
+    <div class="menuItem-Description">
+        <p style="color: black;">{{itemDetail.Description}}</p>
+    </div>
+    {%endfor%}
+
+    <div class="menuItem-Image">  
+      <img src="data:image/jpg;charset=utf8;base64,{{item.ItemImage}}"/>
+    </div>     
+    
+    <script> var itemId = "{{item.ItemId}}"; </script>
+    {%if user|length%}
+    <form  action="itemDetails.php?item={{item.ItemId}}" method="post">
+        <input type="submit" name="favourites" value="Add To Favourites">
+        {%endif%}
+    </form>
+      {%endfor%}
+
+     
+    </div>
+    </br>
+  
+</div>
+
+ 
+ 
+  
+  <br />
+
