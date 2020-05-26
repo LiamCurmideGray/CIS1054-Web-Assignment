@@ -10,7 +10,7 @@ require 'phpFunctions/userAccFunctions.php';
             <input class="usrAccBtn" name="chngName" type="button" onclick="openForm(name)" value="Change Name"/>
             <input class="usrAccBtn" name="chngTelNum" type="button" onclick="openForm(name)" value="Change Tel. Number"/>
             <input class="usrAccBtn" name="chngPswd" type="button" onclick="openForm(name)" value="Change Password"/>
-            <input class="usrAccBtn" name="delAcc" type="submit" onclick="" value="Delete Account"/>
+            <input class="usrAccBtn" name="delAcc" type="button" onclick="openForm(name)" value="Delete Account"/>
             <input class="usrAccBtn" name="logout" type="submit" value="Logout"/>
         </form>
     <!-- </div> -->
@@ -66,6 +66,15 @@ require 'phpFunctions/userAccFunctions.php';
         <br>
         <button type="submit" class="chgBtn" name="chgPswd" onclick="">Change</button>
         <button type="button" class="chgBtn" name="chngPswd" class="btn cancel" onclick="closeForm(name)">Close</button>
+        <br>
+    </form>
+</div>
+
+<div id="delPopup" class="popup">
+    <form action="phpFunctions/userAccFunctions.php" class="chgForm" method="POST">
+        <h1>Delete Account?</h1>
+        <button type="submit" class="chgBtn" name="delAcc" onclick="">Delete Account</button>
+        <button type="button" class="chgBtn" name="delAcc" class="btn cancel" onclick="closeForm(name)">Close</button>
         <br>
     </form>
 </div>
