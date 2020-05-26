@@ -1,12 +1,10 @@
 <?php
 include 'header.php';
 
-
         if ($_SESSION['result']) {
             echo $_SESSION['result'];
             $_SESSION['result'] = NULL;
         }
-  
 ?>
 
 
