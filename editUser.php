@@ -3,52 +3,60 @@ include "header.php";
 
 include "phpFunctions/connectToDB.php";
 
-session_start();
+$conn = connectionDb();
 
 
 if ($_SESSION['roleId'] == 1) {
 
-    $conn = connectionDb();
-    $sql = "SELECT * FROM user;";
-    $result = mysqli_query($conn, $sql);
+    $userID = $_GET['user'];
+    if (isset($_POST['editUser'])) {
+
+        $sql = "SELECT * FROM user WHERE UserID=$userID;";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
+
 ?>
 
-    <form method="POST" name="editRowForm">
-        <div class="container">
-            <h1> Edit </h1>
-            <p> Fill in form to update a row. </p>
+        <head>
+            <link rel="stylesheet" href="stylesheets\editUserStyle.css">
+        </head>
 
-            <hr>
+        <form method="POST" name="editRowForm">
+            <div class="container">
+                <h1> Edit </h1>
+                <p> Fill in form to update a row. </p>
 
-            <label> ID </label>
-            <input type="number" placeholder="User ID" name="userId" required>
+                <hr>
 
-            <label> Email </label>
-            <input type="email" placeholder="Email Address" name="editEmail" required>
+                <label> ID </label>
+                <input type="number" value="<?php echo array_values($row)[0]; ?>" name="userId" required readonly>
 
-            <label> FirstName </label>
-            <input type="text" placeholder="First Name" name="editFirstname" required>
+                <label> Email </label>
+                <input type="email" value="<?php echo array_values($row)[1]; ?>" name="editEmail" required>
 
-            <label> Surname </label>
-            <input type="text" placeholder="Last Name" name="editLastname" required>
+                <label> FirstName </label>
+                <input type="text" value="<?php echo array_values($row)[3]; ?>" name="editFirstname" required>
 
-            <label> Telephone </label>
-            <input type="number" placeholder="Phone Number" name="editTelephone" min="20000000" max="99999999" required>
+                <label> Surname </label>
+                <input type="text" value="<?php echo array_values($row)[4]; ?>" name="editLastname" required>
 
-            <label> Password </label>
-            <input type="password" placeholder="Password" name="editPassword" required>
+                <label> Telephone </label>
+                <input type="number" value="<?php echo array_values($row)[5]; ?>" name="editTelephone" min="20000000" max="99999999" required>
 
-            <label> Repeat Password </label>
-            <input type="password" placeholder="Repeat Password" name="rptPassword" required>
-            <hr>
+                <label> Password </label>
+                <input type="password" placeholder="Password" name="editPassword">
 
-            <button type="submit" class="editbtn" name="update">Update </button>
-        </div>
+                <label> Repeat Password </label>
+                <input type="password" placeholder="Repeat Password" name="rptPassword">
+                <hr>
 
-    </form>
+                <button type="submit" class="editbtn" name="update">Update </button>
+            </div>
+
+        </form>
 
 <?php
-
+    }
     if (isset($_POST['update'])) {
         $user_id = $_POST['userId'];
         $first_name = $_POST['editFirstname'];
@@ -57,6 +65,16 @@ if ($_SESSION['roleId'] == 1) {
         $customer_email = $_POST['editEmail'];
         $password = $_POST['editPassword'];
         $rptPassword = $_POST['rptPassword'];
+
+        if (empty($password) && empty($rptPassword)) {
+            $sql = "SELECT UsrPassword FROM user WHERE UserId=$userID;";
+            $query = $conn -> prepare($sql);
+            $query->execute();
+            $result = $query->get_result();
+            $valuePassword = $result->fetch_object();
+            $password = $valuePassword->UsrPassword;
+            $rptPassword = $valuePassword->UsrPassword;
+        }
 
         if (!empty($user_id) && !empty($first_name) && !empty($last_name) && !empty($customer_email) && !empty($contact_number) && !empty($password) && preg_match("/^[a-zA-Z ]*$/", $first_name) && preg_match("/^[a-zA-Z ]*$/", $last_name) && is_numeric($contact_number) && filter_var($customer_email, FILTER_VALIDATE_EMAIL)) {
 
