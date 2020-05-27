@@ -3,10 +3,6 @@
 
     session_start();
 
-    // if($_SESSION['result']) {
-    //     echo $_SESSION['result'];
-    //     $_SESSION['result'] = NULL;
-    //   } 
 ?>
 
 <div class = "login">
@@ -18,7 +14,7 @@
         </div>
         <div class = "formInput">
             <p>Password</p>
-            <input type="text" name="UsrPassword" placeholder="Enter Password"/>
+            <input type="password" name="UsrPassword" placeholder="Enter Password"/>
         </div>
         <input type="submit" name="submit" value="LOGIN" class="btn-login"/>
     </form>
@@ -27,7 +23,7 @@
 
     <?php
     
-    if($_SESSION['result']) {
+    if(isset($_SESSION['result'])) {
         echo $_SESSION['result'];
         $_SESSION['result'] = NULL;
       }

@@ -32,14 +32,10 @@ body {
 
 .line {
     position: relative;
-
-    border-bottom: 1px solid black;   
-  }
-
+    border-bottom: 1px solid black;
+}
 
 .footerText {
     text-align: center;
-
     color: black;
-
-  }
+}

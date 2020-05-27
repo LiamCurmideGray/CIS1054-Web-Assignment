@@ -11,11 +11,8 @@
 
         $conn = connectionDb();
 
-        $sql = "SELECT UsrPassword FROM user WHERE Email=?";
+        $sql = "SELECT * FROM user WHERE Email=?";
 
-        // $dbPass = mysqli_query($conn, $sql);
-        // $dbPassArr = mysqli_fetch_array($dbPass);
-        // $dbPassStr = implode($dbPassArr);
 
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('s', $email);
@@ -25,14 +22,25 @@
 
         $dbPassStr = $valueOfUsrPass->UsrPassword;
 
-        // echo gettype($pswd);
-        // echo gettype($dbPassStr);       
-        
-        // echo password_verify($pswd, $dbPassStr) ? 'true' : 'false';
-        
-        // if(mysqli_num_rows($dbPass)==1){
-        if(password_verify($pswd, $dbPassStr)){            
-            header('Location: ../index.php');
+
+        if(password_verify($pswd, $dbPassStr)){
+            $INSERT = "SELECT RoleId FROM userroles WHERE UserId=?";
+            $stmt = $conn->prepare($INSERT);
+            $stmt->bind_param("i", $valueOfUsrPass->UserId);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $valueOfUsrRole = $result->fetch_object();
+    
+            $_SESSION['roleId'] = $valueOfUsrRole->RoleId;
+            
+            if ($_SESSION['roleId'] == 1){
+            
+            header('Location: ../adminPage.php');
+            }
+
+            else {
+                header('Location: ../index.php');
+            }
             exit;
         }else{
             $_SESSION['result'] = '<script>document.getElementById("loginError").style.opacity = "1";</script>';
