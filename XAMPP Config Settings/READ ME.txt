@@ -1,0 +1,3 @@
+Copy the php.ini file and paste it in C:\xampp\php to replace the existing php.ini file
+
+Copy the sendmail.ini file and paste it in C:\xampp\sendmail to replace the existing sendmail.ini file

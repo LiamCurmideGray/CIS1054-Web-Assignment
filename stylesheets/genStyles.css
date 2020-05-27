@@ -14,7 +14,6 @@ body {
     background-color: #D8C3A5;
     display: flex;
     justify-content: space-evenly;
-    
 }
 
 .topnav a {
@@ -34,17 +33,15 @@ body {
 .line {
     padding-top: 7px;
     position: relative;
-    border-bottom: 1px solid black;   
-  }
-
+    border-bottom: 1px solid black;
+}
 
 .footerText {
     text-align: center;
     color: black;
-  }
+}
 
-  h1{
+h1 {
     text-align: center;
     color: #e8544f;
-  }
-
+}
