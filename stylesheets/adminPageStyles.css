@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 700px;
+    min-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+caption {
+    caption-side: bottom;
+    font-weight: bold;
+    font-style: italic;
+    margin: 4px;
+}
+
+th {
+    background-color: white;
+}
+
+table tr:nth-child(odd) td {
+    background-color: white;
+}
+
+table,
+th,
+td {
+    border: 2px solid gray;
+}
+
+th,
+td {
+    height: 24px;
+    padding: 4px;
+    vertical-align: middle;
+}
+
+
+/* Add padding to containers */
+
+.container {
+    padding: 16px;
+}
+
+h1,
+p {
+    color: black;
+}
+
+label {
+    text-align: left;
+}
+
+
+/* Full-width input fields */
+
+input[type=email],
+input[type=text],
+input[type=password],
+input[type=number] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=email]:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=number]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+/* Overwrite default styles of hr */
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+
+/* Set a style for the submit/register button */
+
+.editbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.editbtn:hover {
+    opacity: 5;
+}
+
+.deletebtn {
+    background-color: lightcoral;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.deletebtn:hover {
+    opacity: 5;
+}
+
+
+/* Add a blue text color to links */
+
+a {
+    color: dodgerblue;
+}
+
+
+/* Set a grey background color and center the text of the "sign in" section */
+
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+input[type='checkbox'] {
+    display: none;
+}
+
+.lbl-toggle {
+    margin: 0 auto;
+    text-transform: uppercase;
+    width: 25%;
+    display: block;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease-out;
+}
+
+.lbl-toggle:hover {
+    color: black;
+}
+
+.collapsible-content {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .25s ease-in-out;
+}
+
+.toggle:checked+.lbl-toggle+.collapsible-content {
+    max-height: 100vh;
+}
+
+.toggle:checked+.lbl-toggle::before {
+    transform: rotate(90deg) translateX(-3px);
+}
+
+.toggle:checked+.lbl-toggle {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}

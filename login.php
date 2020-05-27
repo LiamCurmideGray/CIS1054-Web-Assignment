@@ -1,5 +1,8 @@
 <?php
-include "header.php";
+    include "header.php";
+
+    session_start();
+
 ?>
 
 <div class = "login">
@@ -11,7 +14,7 @@ include "header.php";
         </div>
         <div class = "formInput">
             <p>Password</p>
-            <input type="text" name="UsrPassword" placeholder="Enter Password"/>
+            <input type="password" name="UsrPassword" placeholder="Enter Password"/>
         </div>
         <input type="submit" name="submit" value="LOGIN" class="btn-login"/>
     </form>
