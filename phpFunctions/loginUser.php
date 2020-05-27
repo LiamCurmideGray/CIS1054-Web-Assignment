@@ -18,12 +18,19 @@
         $stmt->bind_param('s', $email);
         $stmt->execute();
         $result = $stmt->get_result();
-        $valueOfUsrPass = $result->fetch_object();
+        $valueOfUsr = $result->fetch_object();
 
-        $dbPassStr = $valueOfUsrPass->UsrPassword;
+        $dbPassStr = $valueOfUsr->UsrPassword;
+
+        // echo gettype($valueOfUsr);
 
 
         if(password_verify($pswd, $dbPassStr)){
+          
+           $_SESSION['isLogged'] = true;
+            $_SESSION['userID'] = $valueOfUsr->UserId; 
+            $_SESSION['isError'] = false;
+          
             $INSERT = "SELECT RoleId FROM userroles WHERE UserId=?";
             $stmt = $conn->prepare($INSERT);
             $stmt->bind_param("i", $valueOfUsrPass->UserId);
@@ -41,15 +48,12 @@
             else {
                 header('Location: ../index.php');
             }
-            exit;
-        }else{
-            $_SESSION['result'] = '<script>document.getElementById("loginError").style.opacity = "1";</script>';
-            header('Location: ../login.php');    
-            exit;
-        }
+
 
     }else{
-        $_SESSION['result'] = '<script>document.getElementById("loginError").style.opacity = "1";</script>';
+        $_SESSION['isLogged'] = false;
+        // $_SESSION['result'] = '<script>document.getElementById("loginError").style.opacity = "1";</script>';
+        $_SESSION['isError'] = true;
         header('Location: ../login.php');    
         exit;
     }

@@ -1,23 +1,35 @@
+<link rel="stylesheet" href="stylesheets\menuStyles.css">
+
+<div class="menuBody"></div>
 <h1 style="text-align: center;">Menu Page</h1>
 <br />
+  <div class="category">
+    {%for category in categories%}
+  <h2 class="category-section-title">{{category.CategoryName}}</h2>
+   
+      {%for item in items%} 
+        {%if category.CategoryId == item.CategoryId%}
+  <div class="menuItem">
+    <div class ="menuItem-Name">
+       <h3> {{item.ItemName}} </h3>
+    </div>
 
-<table>
-  {%for category in categories%}
-  <h2 style="text-align: center;">{{category.CategoryName}}</h2>
-  <table border="1" style="width: 100%;">
-    <tr>
-      <th>Item Name</th>
-    </tr>
-    {%for item in items%} {%if category.CategoryId == item.CategoryId%}
-    <tr style="text-align: center;">
-      <td>{{item.ItemName}}</td>
-      <td><a href="menuDetails.php">View Details</a></td>
-    </tr>
+    <!-- Commented out cause I'm not sure if I really want to display images in Menu page -->
+    <!-- <div class="menuItem-Image">  
+      <img src="data:image/jpg;charset=utf8;base64,{{item.ItemImage}}"/>
+    </div> -->
 
-    {%endif%} {%endfor%}
-  </table>
+    <div class="viewDetails">
+      <input type="button" value="View Details" onclick="window.location='http://localhost/CIS1054-Web-Assignment/itemDetails.php?item={{item.ItemId}}'">
+    </div>
+  </div>
+        {%endif%} 
+      {%endfor%}
+    {%endfor%}
+    </br>
+  </div>
+</div>
+ 
+  
   <br />
-  {%endfor%}
 
-  <!-- <p>ID: {{item.ItemId}} Item Name: {{item.ItemName}} Category Id: {{item.CategoryId}}</p> -->
-</table>
