@@ -8,15 +8,15 @@ $conn = connectionDb();
 
 $itemId = $_GET['item'];
 
-if(isset($_POST['favourites'])){
+if(isset($_POST['addfavourites'])){
     if(isset($_SESSION['userID'])) {
-        include 'phpFunctions/addToFavourites.php';
+        include 'phpFunctions/favouritesFunctions.php';
         addToFavourites($itemId,$_SESSION['userID']);
         $_POST['favourites'] = null;
     }  
 }
 
-if ($_SESSION['result']) {
+if (isset($_SESSION['result'])) {
     echo $_SESSION['result'];
     $_SESSION['result'] = NULL;
 }

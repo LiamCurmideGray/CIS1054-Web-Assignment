@@ -1,5 +1,5 @@
 <?php
-    include 'header.php'
+    include 'header.php';
 ?>
 <div class="aboutRestaurant">
     <!-- <img src="Images\about_pics\aboutRestaurantPic.jpg" alt="Photo of restaurant"> -->

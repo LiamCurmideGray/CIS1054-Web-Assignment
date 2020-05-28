@@ -1,5 +1,6 @@
 <?php
 include 'header.php';
+
 require 'phpFunctions/userAccFunctions.php';
 ?>
 <div class="usrAcc">

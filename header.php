@@ -4,7 +4,7 @@ session_start();
 if (empty($_SESSION['userID'])) {
     $_SESSION['isLogged'] = false;
     // $_SESSION['isError'] = false;
-} 
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,13 +15,15 @@ if (empty($_SESSION['userID'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="stylesheets\genStyles.css">
-    <link rel="stylesheet" href="stylesheets\indexStyles.css">
-    <link rel="stylesheet" href="stylesheets\aboutStyles.css">
-    <link rel="stylesheet" href="stylesheets\contactStyles.css">
-    <link rel="stylesheet" href="stylesheets\loginStyles.css">
-    <link rel="stylesheet" href="stylesheets\registerStyles.css">
-    <link rel="stylesheet" href="stylesheets\userAccountStyles.css">
 
+  <?php
+
+include 'phpFunctions/stylesFunctions.php';
+
+$URL = "$_SERVER[REQUEST_URI]";
+echo getStylesheet($URL);
+
+?>
 
   </head>
 
@@ -32,17 +34,17 @@ if (empty($_SESSION['userID'])) {
       <a href="about.php">About</a>
       <a href="menu.php">Menu</a>
       <a href="contact.php">Contact</a>
-      <a href="#favourites">Favourites</a>
       <?php
-      if($_SESSION['isLogged']){
-      ?>
+if ($_SESSION['isLogged']) {
+    ?>
+       <a href="favourites.php">Favourites</a>
        <a href="userAccount.php">User Account</a>
       <?php
-      }else{
-      ?>
+} else {
+    ?>
       <a href="login.php">Login</a>
       <?php
-      }
-      ?>
+}
+?>
     </div>
     </br>
