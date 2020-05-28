@@ -43,3 +43,4 @@ if (isset($conn)) {
 }
 
 include 'footer.php';
+?>

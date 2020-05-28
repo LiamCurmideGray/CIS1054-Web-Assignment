@@ -1,0 +1,40 @@
+
+<div class="menuBody">
+<h1 style="text-align: center;">Favourites Page</h1>
+<br />
+  
+      {%for item in items%}
+  <div class="menuItem">
+    <div class ="menuItem-Name">
+       <h3> {{item.ItemName}} </h3>
+    </div>
+
+    <div class="foo">
+        <form action="favourites.php?item={{item.ItemId}}" method="post">
+            <input type="submit" name="favourites" value="Remove from Favourites">
+        </form>
+    </div>
+    
+    <div class="viewDetails">
+      <input type="button"  target="_blank" value="View Details" onclick="window.location='http://localhost/CIS1054-Web-Assignment/itemDetails.php?item={{item.ItemId}}'">
+    </div>
+  </div> 
+      {%endfor%}
+    </br>
+
+    <form method="post" name="emailForm" action="emailFunctions/favouritesEmail.php?userId={{userId}}">
+      <label>Enter Email Address to send to:</label>
+      <input type="email" name="favouriteEmail" placeholder="Enter Email Address" required>
+      <input type="submit" name="submitFavourites" value="Send Favourites">
+    </form>
+
+
+</div>
+ 
+  
+  <br />
+
+    <!-- Commented out cause I'm not sure if I really want to display images in Menu page -->
+    <!-- <div class="menuItem-Image">  
+      <img src="data:image/jpg;charset=utf8;base64,{{item.ItemImage}}"/>
+    </div> -->

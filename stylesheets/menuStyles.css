@@ -24,22 +24,37 @@
   font-size: 18px;
 }
 
+/* form {
+  text-align: center;
+} */
+
+.foo{
+  text-align: center;
+}
+
 .menuItem-Name {
   font-family: helvetica;
   font-weight: bold;
   text-align: center;
   color: darkgray;
-  
 }
 
-.menuItem-Image {
+.menuItem-Image{
   padding-top: 7px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 25%;
-  height: 25%;
+  width: 400px;
+  height:  400px;
 }
+
+
+input.submit {
+  float: none;
+  display: block;
+  width: 100px;
+  margin: 10px auto;
+  }
 
 .viewDetails {
   text-align: center;
@@ -49,3 +64,5 @@
   padding-bottom: 5px;
   border-bottom: 2px dotted rgb(213, 213, 213);
 }
+
+

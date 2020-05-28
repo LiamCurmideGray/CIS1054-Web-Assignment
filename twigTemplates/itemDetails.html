@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="stylesheets\menuStyles.css">
 
 <div class="menuBody">
 <h1 style="text-align: center;">Item Details Page</h1>
@@ -19,15 +18,15 @@
     {%endfor%}
 
     <div class="menuItem-Image">  
-      <img src="data:image/jpg;charset=utf8;base64,{{item.ItemImage}}"/>
+      <img class="menuItem-Image" src="data:image/jpg;charset=utf8;base64,{{item.ItemImage}}"/>
     </div>     
     
     <script> var itemId = "{{item.ItemId}}"; </script>
     {%if user|length%}
     <form  action="itemDetails.php?item={{item.ItemId}}" method="post">
-        <input type="submit" name="favourites" value="Add To Favourites">
-        {%endif%}
+        <input type="submit" name="addfavourites" value="Add To Favourites">
     </form>
+    {%endif%}
       {%endfor%}
 
      
