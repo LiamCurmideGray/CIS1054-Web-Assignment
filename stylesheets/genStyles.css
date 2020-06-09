@@ -36,7 +36,9 @@ body {
     border-bottom: 1px solid black;
 }
 
-.footerText {
+.footerText,
+.openingHours,
+.address {
     text-align: center;
     color: black;
 }

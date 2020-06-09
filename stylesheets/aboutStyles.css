@@ -1,11 +1,10 @@
-.aboutRestaurant{
+.aboutRestaurant {
     height: 100vh;
     text-align: center;
     padding: 10vh;
-
 }
 
-.aboutRestaurantText{
+.aboutRestaurantText {
     text-align: justify;
     margin-right: auto;
     margin-left: auto;
@@ -13,38 +12,47 @@
     width: 50vw;
 }
 
-.aboutRestaurantText h1{
+.aboutRestaurantText h1 {
     text-align: center;
     color: #e8544f;
 }
 
-.aboutStaff{
+.aboutRestaurantText h2 {
+    text-align: center;
+    color: #e8544f;
+}
+
+.aboutRestaurantText p {
+    text-align: center;
+}
+
+.aboutStaff {
     height: 100vh;
 }
 
-.aboutStaffTitle{
+.aboutStaffTitle {
     text-align: center;
     color: #e8544f;
 }
 
-.card{
+.card {
     width: 30vw;
     height: 80vh;
     float: left;
     text-align: center;
     /* padding: 0 8vw; */
-    margin: 0 3vh  0 3vh;
+    margin: 0 3vh 0 3vh;
     box-shadow: 0 4px 8px 0 #8e8d8a;
 }
 
-.staffImg{
+.staffImg {
     width: 30vw;
 }
 
-.staffName{
+.staffName {
     color: #e98074;
 }
 
-.job{
+.job {
     color: #e98074;
 }
