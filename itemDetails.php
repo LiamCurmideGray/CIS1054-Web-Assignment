@@ -2,24 +2,21 @@
 
 include 'header.php';
 
-require_once 'twigbootstrap.php';
-require_once 'phpFunctions/connectToDB.php';
+require_once 'twigTemplates/twigbootstrap.php';
+require_once 'databaseFunctions/connectToDB.php';
 $conn = connectionDb();
 
 $itemId = $_GET['item'];
 
 if(isset($_POST['addfavourites'])){
     if(isset($_SESSION['userID'])) {
-        include 'phpFunctions/favouritesFunctions.php';
+        include 'databaseFunctions/favouritesFunctions.php';
         addToFavourites($itemId,$_SESSION['userID']);
         $_POST['favourites'] = null;
     }  
 }
 
-if (isset($_SESSION['result'])) {
-    echo $_SESSION['result'];
-    $_SESSION['result'] = NULL;
-}
+
 
 
 if (isset($conn)) {

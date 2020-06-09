@@ -56,7 +56,9 @@ label {
 }
 
 .userTable {
-    margin: 50px;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 50px;
 }
 
 hr {
@@ -116,24 +118,29 @@ input[type='checkbox'] {
 }
 
 .lbl-toggle {
-    margin: 0 auto;
     text-transform: uppercase;
-    width: 25%;
     display: block;
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
     transition: all 0.25s ease-out;
+    color: blue;
 }
 
+
+
 .lbl-toggle:hover {
-    color: black;
+    font-weight: bold;
 }
 
 .collapsible-content {
     max-height: 0px;
-    overflow: hidden;
     transition: max-height .25s ease-in-out;
+    overflow-y: scroll;
+    width: 100%;
+    height: 470px;
+    scrollbar-width: none;
+    overflow-x: hidden;
 }
 
 .toggle:checked+.lbl-toggle+.collapsible-content {
@@ -148,3 +155,6 @@ input[type='checkbox'] {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
+
+
+

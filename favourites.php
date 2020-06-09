@@ -2,28 +2,20 @@
 include 'header.php';
 
 $userId = $_SESSION['userID'];
-$output = $_SESSION['result'];
 
-require_once 'twigbootstrap.php';
-require_once 'phpFunctions/connectToDB.php';
+require_once 'twigTemplates/twigbootstrap.php';
+require_once 'databaseFunctions/connectToDB.php';
 $conn = connectionDb();
 
 
 if(isset($_POST['favourites'])){
-        include 'phpFunctions/favouritesFunctions.php';
+        include 'databaseFunctions/favouritesFunctions.php';
         $itemId = $_GET['item'];
         deleteFavourite($itemId,$_SESSION['userID']);
         $_POST['favourites'] = null;
     
 }
 
-if (isset($output)) {
-        echo $_SESSION['result'];
-        echo "OK THALT";
-        $_SESSION['result'] = NULL;
-    } else {
-        echo "WTF??";
-    }
 
 if (isset($conn)) {
 
@@ -52,7 +44,7 @@ if (isset($conn)) {
 
     echo $twig->render('favourites.html',
         ['items' => $items , 'userId' => $userId]);
-
+       
 } else {
         echo 'ERROR Connecting to DB';
 }

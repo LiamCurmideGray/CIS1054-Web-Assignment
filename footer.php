@@ -13,3 +13,13 @@
 
 </footer>
 </html>
+
+<?php
+
+if (isset($_SESSION['result'])) {
+    usleep(200000);
+    echo $_SESSION['result'];
+    $_SESSION['result'] = NULL;
+}
+
+?>

@@ -60,3 +60,4 @@ if (!empty($itemname) && !empty($image) && !empty($categoryid) && !empty($price)
 
 header('Location: ../newItem.php');
 exit;
+?>

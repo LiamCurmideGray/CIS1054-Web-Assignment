@@ -1,8 +1,8 @@
 <?php
 include 'header.php';
 
-require_once 'twigbootstrap.php';
-require_once 'phpFunctions/connectToDB.php';
+require_once 'twigTemplates/twigbootstrap.php';
+require_once 'databaseFunctions/connectToDB.php';
 $conn = connectionDb();
 
 if (isset($conn)) {

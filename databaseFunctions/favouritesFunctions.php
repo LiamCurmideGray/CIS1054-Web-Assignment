@@ -3,9 +3,7 @@
 
 function addToFavourites($itemId, $userId){
 
-    // echo '<script>alert("UMM HELLOO? '.$itemId.' '.$userId.'") </script>';
-
-    require_once 'phpFunctions/connectToDB.php';
+    require_once 'connectToDB.php';
     $conn = connectionDb();
 
     settype($itemId, "integer");
@@ -23,39 +21,33 @@ function addToFavourites($itemId, $userId){
         $conn->close;
     
         $_SESSION['result'] = '<script>alert("Dish Added to Favourites") </script>';
-        header('Location: /CIS1054-Web-Assignment/itemDetails.php?item='.$itemId);
-        exit;
     
     } else {
         $_SESSION['result'] = '<script>alert("You already have this on your favourites") </script>';
-        header('Location: /CIS1054-Web-Assignment/itemDetails.php?item='.$itemId);
-        exit;
-       
     }   
+    header('Location: /CIS1054-Web-Assignment/menu.php');
+    exit;
 }
 
 function deleteFavourite($itemId, $userId) {
 
-    require_once 'phpFunctions/connectToDB.php';
+    require_once 'connectToDB.php';
     $conn = connectionDb();
 
     settype($itemId, "integer");
 
     $sql = "DELETE FROM favourites WHERE UserId  = '$userId' AND ItemId = '$itemId'";
     if($conn->query($sql) === TRUE) {
-           echo '<script>alert("Favourite Item has been Removed") </script>';
+        $_SESSION['result'] =  '<script>alert("Favourite Item has been Removed") </script>';
     } else {
-        echo '<script>alert("There was an Error trying to delete favourite") </script>';
+        $_SESSION['result'] =  '<script>alert("There was an Error trying to delete favourite") </script>';
 
     }
     
     $conn->close();
 
-
-    // $_SESSION['result'] = '<script>alert("Removing Favourite Item Id:" '.$itemId.' ") </script>';
-    // header('Location: /CIS1054-Web-Assignment/favourites.php');
-    // exit;
+    header('Location: /CIS1054-Web-Assignment/favourites.php');
+    exit;
 }
-
 
 ?>

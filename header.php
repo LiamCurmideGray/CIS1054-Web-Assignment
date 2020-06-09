@@ -3,7 +3,6 @@ session_start();
 
 if (empty($_SESSION['userID'])) {
     $_SESSION['isLogged'] = false;
-    // $_SESSION['isError'] = false;
 }
 ?>
 
@@ -18,9 +17,10 @@ if (empty($_SESSION['userID'])) {
 
   <?php
 
-include 'phpFunctions/stylesFunctions.php';
+include 'databaseFunctions/stylesFunctions.php';
 
 $URL = "$_SERVER[REQUEST_URI]";
+// echo $URL;
 echo getStylesheet($URL);
 
 ?>
@@ -34,16 +34,19 @@ echo getStylesheet($URL);
       <a href="about.php">About</a>
       <a href="menu.php">Menu</a>
       <a href="contact.php">Contact</a>
+
       <?php
 if ($_SESSION['isLogged']) {
-    ?>
-       <a href="favourites.php">Favourites</a>
-       <a href="userAccount.php">User Account</a>
-      <?php
+
+    echo "<a href=\"favourites.php\">Favourites</a>";
+    echo " <a href=\"userAccount.php\">User Account</a>";
+
+    if ($_SESSION['roleId'] == 1) {
+        echo " <a style=\"background-color: gold\"href=\"adminPage.php\">Admin Page</a>";
+    }
+
 } else {
-    ?>
-      <a href="login.php">Login</a>
-      <?php
+    echo "<a href=\"login.php\">Login</a>";
 }
 ?>
     </div>

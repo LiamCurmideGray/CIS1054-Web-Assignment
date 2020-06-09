@@ -5,7 +5,7 @@
 
 <div class = "login">
     <h1>Login</h1>
-    <form action="phpFunctions/loginUser.php" method="POST" >
+    <form action="databaseFunctions/loginUser.php" name="loginuser"method="POST" >
         <div class = "formInput">
             <p>Email</p>
             <input type="text" name="Email" placeholder="Enter Email"/>

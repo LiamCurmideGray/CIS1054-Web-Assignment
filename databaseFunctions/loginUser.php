@@ -1,6 +1,7 @@
 <?php
     session_start();
 
+
     $email = $_POST['Email'];
     $pswd = $_POST['UsrPassword'];
 
@@ -33,21 +34,13 @@
           
             $INSERT = "SELECT RoleId FROM userroles WHERE UserId=?";
             $stmt = $conn->prepare($INSERT);
-            $stmt->bind_param("i", $valueOfUsrPass->UserId);
+            $stmt->bind_param("i",  $_SESSION['userID']);
             $stmt->execute();
             $result = $stmt->get_result();
             $valueOfUsrRole = $result->fetch_object();
     
             $_SESSION['roleId'] = $valueOfUsrRole->RoleId;
-            
-            if ($_SESSION['roleId'] == 1){
-            
-            header('Location: ../adminPage.php');
-            }
-
-            else {
-                header('Location: ../index.php');
-            }
+            header('Location: ../index.php');    
 
 
     }else{
@@ -65,4 +58,5 @@
         header('Location: ../login.php');    
         exit;
     }
+
     ?>
