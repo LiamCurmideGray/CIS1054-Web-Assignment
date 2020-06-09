@@ -11,6 +11,14 @@
             Interdum velit euismod in pellentesque massa placerat duis. Etiam non quam lacus suspendisse.
             Ipsum faucibus vitae aliquet nec ullamcorper sit. Quis auctor elit sed vulputate.
         </p>
+
+        <h2>Opening Hours</h2>
+
+        <p>Monday - Sunday: 9:00am - 10:00pm</p>
+
+        <h2>Address</h2>
+
+        <p>123, Underwater Street, Bikkini Bottom</p>
     </div>
 </div>
 
