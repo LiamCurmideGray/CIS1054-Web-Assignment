@@ -3,7 +3,7 @@
 $userId = $_GET['userId'];
 $emailToSend = $_POST['favouriteEmail'];
 
-require_once '../phpFunctions/connectToDB.php';
+require_once '../databaseFunctions/connectToDB.php';
 $conn = connectionDb();
 
 if (isset($conn)) {

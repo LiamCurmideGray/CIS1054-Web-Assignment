@@ -1,12 +1,12 @@
 <?php
 include 'header.php';
 
-require 'phpFunctions/userAccFunctions.php';
+require 'databaseFunctions/userAccFunctions.php';
 ?>
 <div class="usrAcc">
     <h1 class="userHead1">User Account</h1>
     <!-- <div class = "usrAccContainer"> -->
-        <form class = "usrAccContainer" action="phpFunctions/userAccFunctions.php" method="POST">
+        <form class = "usrAccContainer" action="databaseFunctions/userAccFunctions.php" method="POST">
             <input id="chngEmailbtn" class="usrAccBtn" name="chngEmail" type="button" onclick="openForm(name)" value="Change Email"/>
             <input class="usrAccBtn" name="chngName" type="button" onclick="openForm(name)" value="Change Name"/>
             <input class="usrAccBtn" name="chngTelNum" type="button" onclick="openForm(name)" value="Change Tel. Number"/>
@@ -18,7 +18,7 @@ require 'phpFunctions/userAccFunctions.php';
 </div>
 
 <div id="emailPopup" class="popup">
-    <form action="phpFunctions/userAccFunctions.php" class="chgForm" method="POST">
+    <form action="databaseFunctions/userAccFunctions.php" class="chgForm" method="POST">
         <h1>Change Email</h1>
         <label for="email"><b>Email</b></label>
         <input class="chngText" type="text" placeholder="Enter Email" name="email" required>
@@ -31,7 +31,7 @@ require 'phpFunctions/userAccFunctions.php';
 </div>
 
 <div id="namePopup" class="popup">
-    <form action="phpFunctions/userAccFunctions.php" class="chgForm" method="POST">
+    <form action="databaseFunctions/userAccFunctions.php" class="chgForm" method="POST">
         <h1>Change Name</h1>
         <label for="fName"><b>First Name</b></label>
         <input class="chngText" type="text" placeholder="Enter First Name" name="fName" required>
@@ -46,7 +46,7 @@ require 'phpFunctions/userAccFunctions.php';
 </div>
 
 <div id="telNumPopup" class="popup">
-    <form action="phpFunctions/userAccFunctions.php" class="chgForm" method="POST">
+    <form action="databaseFunctions/userAccFunctions.php" class="chgForm" method="POST">
         <h1>Change Tel. Number</h1>
         <label for="telNum"><b>Tel Num</b></label>
         <input class="chngText" type="text" placeholder="Enter Tel. Number" name="telNum" required>
@@ -58,7 +58,7 @@ require 'phpFunctions/userAccFunctions.php';
 </div>
 
 <div id="pswdPopup" class="popup">
-    <form action="phpFunctions/userAccFunctions.php" class="chgForm" method="POST">
+    <form action="databaseFunctions/userAccFunctions.php" class="chgForm" method="POST">
         <h1>Change Password</h1>
         <label for="pswd"><b>Password</b></label>
         <input class="chngText" type="text" placeholder="Enter Password" name="pswd" required>
@@ -72,7 +72,7 @@ require 'phpFunctions/userAccFunctions.php';
 </div>
 
 <div id="delPopup" class="popup">
-    <form action="phpFunctions/userAccFunctions.php" class="chgForm" method="POST">
+    <form action="databaseFunctions/userAccFunctions.php" class="chgForm" method="POST">
         <h1>Delete Account?</h1>
         <button type="submit" class="chgBtn" name="delAcc" onclick="">Delete Account</button>
         <button type="button" class="chgBtn" name="delAcc" class="btn cancel" onclick="closeForm(name)">Close</button>

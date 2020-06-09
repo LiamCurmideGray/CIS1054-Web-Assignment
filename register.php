@@ -1,13 +1,9 @@
 <?php
 include 'header.php';
 
-        if (isset($_SESSION['result'])) {
-            echo $_SESSION['result'];
-            $_SESSION['result'] = NULL;
-        }
 ?>
 
-<form action="phpFunctions/addNewUserToDb.php" method="POST">
+<form action="databaseFunctions/addNewUserToDb.php" name="newuser"method="POST">
       <div class="container">
       <h1> Register </h1>
 <p> Fill in form to create account. </p>

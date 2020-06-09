@@ -3,12 +3,8 @@ include 'header.php';
 
 session_start();
 
-if ($_SESSION['result']) {
-    echo $_SESSION['result'];
-    $_SESSION['result'] = null;
-}
 
-require_once 'phpFunctions/connectToDB.php';
+require_once 'databaseFunctions/connectToDB.php';
 $conn = connectionDb();
 $sql = "SELECT * FROM category";
 $result = $conn->query($sql);
@@ -24,7 +20,7 @@ if ($result->num_rows > 0) {
 
 <link rel="stylesheet" href="stylesheets\registerStyle.css">
 
-<form action="phpFunctions/addNewItemToDb.php" method="POST" enctype="multipart/form-data">
+<form action="databaseFunctions/addNewItemToDb.php" method="POST" name="newitem" enctype="multipart/form-data">
     <div class="container">
       <h1> New Dish </h1>
       <p> Fill in form to add New Dish to the Database. </p>

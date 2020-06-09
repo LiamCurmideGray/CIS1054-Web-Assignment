@@ -1,4 +1,7 @@
 <?php
+
+    
+
     function connectionDb(){
         $servername = "localhost";
         $username = "root";
@@ -14,4 +17,5 @@
            return $conn; 
         }
     }
-?>
+
+   ?>

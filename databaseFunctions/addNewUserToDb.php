@@ -58,7 +58,7 @@ if (!empty($email) && !empty($firstname) && !empty($lastname) && !empty($telepho
                     $stmt->close();
                     $conn->close();
                     $_SESSION['result'] = '<script>alert("Record inserted in database") </script>';
-                    header('Location: ../register.php');
+                    header('Location: ../login.php');
                     exit;
                 } else {
                     $conn->close();
@@ -88,3 +88,5 @@ if (!empty($email) && !empty($firstname) && !empty($lastname) && !empty($telepho
     header('Location: ../register.php');
     exit;
 }
+
+?>

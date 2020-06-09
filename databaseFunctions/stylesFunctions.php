@@ -1,7 +1,6 @@
 <?php
 
-function getStylesheet($URL)
-{
+function getStylesheet($URL) {
     $URL = basename($URL);
 
     if (strpos($URL, "?") !== false) {
@@ -36,8 +35,16 @@ function getStylesheet($URL)
         strcmp($URL, "itemDetails") == 0 ||
         strcmp($URL, "favourites") == 0) {
         return $link . "menuStyles.css\">";
-    } else {
-        return "";
-    }
+    } else if(strcmp($URL, "editUser") == 0) {
+        return $link . "editUserStyle.css\">\r\n" . $link . "registerStyles.css\">";
+    } else if (strcmp($URL, "adminPage") == 0) {
+        return $link . "adminPageStyles.css\">";
 
+    }
+    
+    else {
+        return "";
+    }    
 }
+?>
+
