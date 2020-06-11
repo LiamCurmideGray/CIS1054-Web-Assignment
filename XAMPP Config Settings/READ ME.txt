@@ -1,3 +1,5 @@
 Copy the php.ini file and paste it in C:\xampp\php to replace the existing php.ini file
 
 Copy the sendmail.ini file and paste it in C:\xampp\sendmail to replace the existing sendmail.ini file
+
+Copy the my.ini file and paste it in C:\xampp\sql\bin to replace the existing my.ini file
