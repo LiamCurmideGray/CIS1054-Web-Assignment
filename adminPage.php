@@ -35,6 +35,7 @@ if (isset($_SESSION['roleId'])) {
     View Dishes</label>
     </div>
 
+<div class="useritemtable">
     <div id="users">
             <br>
         <?php
@@ -52,9 +53,7 @@ if (isset($_SESSION['roleId'])) {
                 <label for="collapsible" class="lbl-toggle"></label>
                 <div class="collapsible-content">
                         <table>
-                            <!-- <th class="header" style="text-align: center;">User ID</th> -->
                             <th style="text-align: center;">Email</th>
-                            <!-- <th style="text-align: center;">Password ID</th> -->
                             <th style="text-align: center;">First Name</th>
                             <th style="text-align: center;">Last Name</th>
                             <th style="text-align: center;">Telephone</th>
@@ -168,8 +167,7 @@ if (isset($_SESSION['roleId'])) {
 
             </div>
         </div>
-
-
+    </div>
 </div>
 
 

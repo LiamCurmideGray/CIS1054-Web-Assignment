@@ -23,7 +23,7 @@
     
     <script> var itemId = "{{item.ItemId}}"; </script>
     {%if user|length%}
-    <form  action="itemDetails.php?item={{item.ItemId}}" method="post">
+    <form  class="favouritebtn" action="itemDetails.php?item={{item.ItemId}}" method="post">
         <input type="submit" name="addfavourites" value="Add To Favourites">
     </form>
     {%endif%}
