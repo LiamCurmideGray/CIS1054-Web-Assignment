@@ -1,8 +1,9 @@
 <?php
 include 'header.php';
 
-session_start();
+if (isset($_SESSION['roleId'])) {
 
+    if ($_SESSION['roleId'] == 1) {
 
 require_once 'databaseFunctions/connectToDB.php';
 $conn = connectionDb();
@@ -61,5 +62,17 @@ foreach ($categories as $categoryId => $categoryName) {
 </div>
 </form>
 <?php
+
+} else {
+    echo "Oops you're not an Admin";
+    header("Location: index.php");
+    exit;
+}
+} else {
+echo "Session Role Not declared";
+header("Location: index.php");
+exit;
+}
+
 include 'footer.php';
 ?>

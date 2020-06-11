@@ -12,7 +12,7 @@ function getStylesheet($URL) {
     $link = "<link rel=\"stylesheet\" href=\"stylesheets\\";
     echo "<title> $URL </title>";
     
-    if (strcmp($URL, "index") == 0) {
+    if (strcmp($URL, "index") == 0 || strcmp($URL, "CIS1054-Web-Assign") == 0  ) {
         return $link . "indexStyles.css\">";
 
     } else if (strcmp($URL, "about") == 0) {
@@ -35,11 +35,15 @@ function getStylesheet($URL) {
         strcmp($URL, "itemDetails") == 0 ||
         strcmp($URL, "favourites") == 0) {
         return $link . "menuStyles.css\">";
+    
     } else if(strcmp($URL, "editUser") == 0) {
         return $link . "editUserStyle.css\">\r\n" . $link . "registerStyles.css\">";
+    
     } else if (strcmp($URL, "adminPage") == 0) {
         return $link . "adminPageStyles.css\">";
-
+    
+    } else if(strcmp($URL, "editItem") == 0) {
+        return $link . "editItemStyle.css\">\r\n" . $link . "registerStyles.css\">";
     }
     
     else {
