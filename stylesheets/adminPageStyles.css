@@ -2,6 +2,12 @@
     box-sizing: border-box
 }
 
+.adminPage {
+    height: 77vh;
+    text-align: center;
+    padding-top: 0.8vh;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -57,8 +63,14 @@ label {
 
 .userTable {
         margin: auto;
-        margin-top: 30px;
+        margin-top: 70px;
         margin-bottom: 50px;
+}
+
+.itemTable {
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 hr {
@@ -74,11 +86,27 @@ hr {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 80;
+    width: 80px;
     opacity: 0.9;
 }
 
 .deleteUserBtn:hover {
+    opacity: 5;
+}
+
+.addNewItem {
+    border-radius: 7px;
+    background-color: lightcoral;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 45%;
+    opacity: 0.9;
+}
+
+.addNewItem:hover {
     opacity: 5;
 }
 
@@ -138,7 +166,7 @@ input[type='checkbox'] {
     transition: max-height .25s ease-in-out;
     overflow-y: scroll;
     width: 100%;
-    height: 470px;
+    height: 380px;
     scrollbar-width: none;
     overflow-x: hidden;
 }
@@ -157,4 +185,6 @@ input[type='checkbox'] {
 }
 
 
-
+.dishFormWrapper{
+    margin-top: -540px;
+}

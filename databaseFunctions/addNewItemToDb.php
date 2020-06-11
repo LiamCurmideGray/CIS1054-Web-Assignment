@@ -7,6 +7,11 @@ $categoryid = $_POST['categoryid'];
 $price = $_POST['price'];
 $description = $_POST['description'];
 
+require_once 'utils.php';
+$itemname = trimString($itemname);
+$description = trimString($description);
+
+
 if (!empty($itemname) && !empty($image) && !empty($categoryid) && !empty($price) && !empty($description)) {
     require_once 'connectToDB.php';
 
@@ -58,6 +63,9 @@ if (!empty($itemname) && !empty($image) && !empty($categoryid) && !empty($price)
     $_SESSION['result'] = '<script> alert("All fields are required") </script>';
 }
 
-header('Location: ../newItem.php');
+$conn->close();
+header('Location: ../adminPage.php');
 exit;
+
+
 ?>

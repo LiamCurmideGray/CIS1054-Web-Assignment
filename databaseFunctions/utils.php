@@ -37,4 +37,11 @@ function createHash($token)
     ];
 }
 
+function trimString($data)
+{
+    if (strpos($data, '\'') !== false) {
+        $data = str_replace("'", "\'", $data);
+    }
 
+    return $data;
+}

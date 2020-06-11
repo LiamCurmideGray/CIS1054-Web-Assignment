@@ -32,10 +32,14 @@ if(!isset($_SESSION))
 <div class="contactUs">
 
     <h1 class="contactUsTitle">Contact Us Here</h1>
-    <label>Booking</label>
-    <input type="radio" name="selection" onchange="hideQuery(this)" checked> |
+    <label>Booking
+    <input type="radio" name="selection" onchange="hideQuery(this)" checked> 
+    </label> |
+
+    <label class="queryLabel">
     <input type="radio" name="selection" onchange="hideBooking(this)">
-    <label class="queryLabel">Query or Complaint</label>
+    Query or Complaint</label>
+    
 
 
     <div id="query" style="visibility: hidden">
@@ -153,10 +157,10 @@ if(!isset($_SESSION))
                             Submit
                         </span>
                     </button>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 <?php
