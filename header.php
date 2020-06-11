@@ -20,7 +20,6 @@ if (empty($_SESSION['userID'])) {
 include 'databaseFunctions/stylesFunctions.php';
 
 $URL = "$_SERVER[REQUEST_URI]";
-// echo $URL;
 echo getStylesheet($URL);
 
 ?>
