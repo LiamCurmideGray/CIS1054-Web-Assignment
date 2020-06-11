@@ -9,8 +9,8 @@
 }
 
 .category-section-title {
-  font-family: georgia;
-  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ba665c;
   font-size: 50px;
   display: block;
   font-weight: normal;
@@ -24,19 +24,16 @@
   font-size: 18px;
 }
 
-/* form {
-  text-align: center;
-} */
-
 .foo{
   text-align: center;
 }
 
 .menuItem-Name {
+  font-size: 3vw;
   font-family: helvetica;
   font-weight: bold;
   text-align: center;
-  color: darkgray;
+  color: #71706e;
 }
 
 .menuItem-Image{
@@ -58,16 +55,42 @@ input.submit {
 
 .viewDetails {
   text-align: center;
-  font-style: italic;
   font-size: 0.9em;
   line-height: 1.5em;
   padding-bottom: 5px;
-  border-bottom: 2px dotted rgb(213, 213, 213);
+  border-bottom: 2px dotted #8e8d8a;
 }
 
-.favouritebtn {
-  margin-top: 20px;
+.menuItem-Price, .menuItem-Description{
   text-align: center;
 }
 
+.detailsBtn, .menuItem-Button, .removeButton, .emailBtn{
+  font-size: 2vw;
+  color: #71706e;
+  background-color: #E98074;
+  border: 1px;
+  border-color: black;
+}
 
+.removeButton{
+  margin-bottom: 1vh;
+}
+
+.detailsBtn:hover, .menuItem-Button:hover, .removeButton:hover, .emailBtn:hover{
+  background-color: #d17368;
+}
+
+.menuItem-Button{
+  margin-top: 2vh;
+  margin-left: 14vw;
+}  
+
+.emailBtn{
+  font-size: 10px;
+}
+
+
+.favEmail{
+  margin-left: 5vw;
+}

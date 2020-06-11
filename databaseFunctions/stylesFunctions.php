@@ -30,12 +30,12 @@ function getStylesheet($URL) {
 
     } else if (strcmp($URL, "userAccount") == 0) {
         return $link . "userAccountStyles.css\">";
-
+      
     } else if (strcmp($URL, "menu") == 0 ||
-        strcmp($URL, "itemDetails") == 0 ||
-        strcmp($URL, "favourites") == 0) {
+        strcmp($URL, "favourites") == 0 ||
+        strcmp($URL, "itemDetails") == 0){
         return $link . "menuStyles.css\">";
-    
+      
     } else if(strcmp($URL, "editUser") == 0) {
         return $link . "editUserStyle.css\">\r\n" . $link . "registerStyles.css\">";
     

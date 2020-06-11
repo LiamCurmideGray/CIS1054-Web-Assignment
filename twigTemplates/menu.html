@@ -10,16 +10,18 @@
         {%if category.CategoryId == item.CategoryId%}
   <div class="menuItem">
     <div class ="menuItem-Name">
-       <h3> {{item.ItemName}} </h3>
+       <p> {{item.ItemName}} </p>
     </div>
 
     <div class="viewDetails">
-      <input type="button" value="View Details" onclick="window.location='http://localhost/CIS1054-Web-Assignment/itemDetails.php?item={{item.ItemId}}'">
+      <input class = "detailsBtn" type="button" value="View Details" onclick="window.location='http://localhost/CIS1054-Web-Assignment/itemDetails.php?item={{item.ItemId}}'">
     </div>
   </div>
         {%endif%} 
       {%endfor%}
     {%endfor%}
+
+    
     </br>
   </div>
 </div>

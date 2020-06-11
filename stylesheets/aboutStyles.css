@@ -2,13 +2,15 @@
     height: 100vh;
     text-align: center;
     padding: 10vh;
+    margin-bottom: 20vh;
 }
 
 .aboutRestaurantText {
     text-align: justify;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 5vh;
+    margin-top: 19vh;
+    margin-bottom: 10vh;
     width: 50vw;
 }
 
@@ -28,16 +30,19 @@
 
 .aboutStaff {
     height: 100vh;
+    padding-top: 3vh;
+    margin-bottom: 20vh;
 }
 
 .aboutStaffTitle {
+    font-size: 5vw;
     text-align: center;
     color: #e8544f;
 }
 
 .card {
     width: 30vw;
-    height: 80vh;
+    height: 75vh;
     float: left;
     text-align: center;
     /* padding: 0 8vw; */
@@ -56,3 +61,10 @@
 .job {
     color: #e98074;
 }
+
+@media screen and (max-width: 650px) {
+    .card {
+      width: 100%;
+      display: block;
+    }
+  }
