@@ -65,4 +65,9 @@ input.submit {
   border-bottom: 2px dotted rgb(213, 213, 213);
 }
 
+.favouritebtn {
+  margin-top: 20px;
+  text-align: center;
+}
+
 
