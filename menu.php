@@ -33,6 +33,8 @@ if (isset($conn)) {
         }
     }
 
+    // $sql = "SELECT * FROM ";
+
     $conn->close();
 
     echo $twig->render('menu.html',

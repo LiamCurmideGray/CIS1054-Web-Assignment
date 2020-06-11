@@ -133,20 +133,18 @@ function deleteUser()
 
     $sqlRole = "delete from userroles where UserId= " . $_SESSION['userID'] . "";
     $sqlUser = "delete from user where UserId= " . $_SESSION['userID'] . "";
-    $sqlFav = "delete from favorites where UserId= " . $_SESSION['userID'] . "";
+    $sqlFav = "delete from favourites where UserId= " . $_SESSION['userID'] . "";
 
-    if ($conn->query($sqlRole) === true) {
-        if ($conn->query($sqlUser) === true) {
-            if ($conn->query($sqlFav)) {
-                // echo "yes";
+    if ($conn->query($sqlFav)) {
+        if ($conn->query($sqlRole) === true) {
+            if ($conn->query($sqlUser) === true) {
                 logout();
             }
         } else {
-            echo "no " . $conn->error;
+            echo $conn->error;
         }
     } else {
-        echo "no2 " . $conn->error;
+        echo $conn->error;
     }
 
-    
 }
