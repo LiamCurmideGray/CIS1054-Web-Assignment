@@ -2,7 +2,7 @@
 
 Welcome to our Website Assignment 2020, this is a Restaurant Website mainly built using php, html, javascript, css and Twig.
 
-Co-authored by: Liam Curmi de Gray, Stefano Schembri, Andrew Magri
+Co-created by: Liam Curmi de Gray, Stefano Schembri, Andrew Magri
 
 # Technologies Used
 
