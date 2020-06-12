@@ -37,13 +37,13 @@ function Update() {
 
 if(empty($_GET['date'])) {
     $date = $_SESSION['entryTime'];
-    $date = date("h:i:sa", $date);
+    $date = date("m/d/Y  h:i:sa", $date);
     echo "First Entered the page at: " . $date;
 } 
 
 else {
     $date =  $_GET['date'];
-    $date = date("h:i:sa", $date);
+    $date = date("m/d/Y  h:i:sa", $date);
     echo "Using GET, First Entered the page at: " . $date;
     echo  "</br>";
 }

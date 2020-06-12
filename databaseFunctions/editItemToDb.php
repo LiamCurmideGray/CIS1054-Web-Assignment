@@ -57,12 +57,12 @@ if (!empty($itemId) && !empty($itemname) && !empty($categoryid) && !empty($price
 
                 if ($INSERT) {
 
-                    $_SESSION['result'] = '<script> alert("Successfully Added to Database") </script>';
+                    $_SESSION['result'] = '<script> alert("Successfully Editted Item to Database") </script>';
                 } else {
-                    $_SESSION['result'] = '<script> alert("There was an error while uploading Item Details") </script>';
+                    $_SESSION['result'] = '<script> alert("There was an error while updating Item Details") </script>';
                 }
             } else {
-                $_SESSION['result'] = '<script> alert("There was an error while uploading Items") </script>';
+                $_SESSION['result'] = '<script> alert("There was an error while updating Items") </script>';
             }
 
         } else {
