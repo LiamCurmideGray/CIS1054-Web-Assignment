@@ -1,6 +1,13 @@
 <?php
 session_start();
-$_SESSION["entryTime"] = strtotime("now");
+$_SESSION['entryTime'] = NULL;
+
+if (empty($_GET['date'])) {
+    $_SESSION["entryTime"] = strtotime("now");
+} else {
+    $_SESSION['entryTime'] = $_GET['date'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +16,7 @@ $_SESSION["entryTime"] = strtotime("now");
 <head>
 <script type="text/javascript">
 
-var phpvalue = <?php echo $_SESSION["entryTime"] ?>;
+var phpvalue = <?php echo $_SESSION["entryTime"]; ?>
 
 function Update() {
     var num = Math.round(new Date().getTime()/1000);
@@ -23,15 +30,38 @@ function Update() {
 <body>
 
 <p id="demo">  </p>
+<button type="button" onclick="Update()">Update Time</button>
 
 <p>
-<?php 
-echo "First Entered the page at: " . date("h:i:sa");
+<?php
+
+if(empty($_GET['date'])) {
+    $date = $_SESSION['entryTime'];
+    $date = date("h:i:sa", $date);
+    echo "First Entered the page at: " . $date;
+} 
+
+else {
+    $date =  $_GET['date'];
+    $date = date("h:i:sa", $date);
+    echo "Using GET, First Entered the page at: " . $date;
+    echo  "</br>";
+}
+
+if(!empty($_POST['textInput'])){
+    $text = $_POST['textInput'];
+    echo "Using POST, text inserted: " , $text;
+}
 ?>
 </p>
 
-<button type="button" onclick="Update()">Update Time 
-</button>
+
+
+    <form action="index.php?date=<?php echo $_SESSION['entryTime'] ?>" method="POST">
+        <label> Enter Text </label>
+        <input type="text" placeholder="Enter Text Here" name="textInput">
+        <button type="submit">Submit </button>
+    </form>
 </body>
 
 </html>
